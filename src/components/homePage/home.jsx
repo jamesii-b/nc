@@ -1,7 +1,7 @@
 import React from "react";
-import img01 from "../assets/img-main.jpg";
+import img01 from "../../assets/img-main.jpg";
 import { Link } from "react-router-dom";
-import pathImage from "../assets/service-path.png";
+import pathImage from "../../assets/service-path.png";
 import { FaAngleDown } from "react-icons/fa";
 import {
   MdCode,
@@ -10,8 +10,8 @@ import {
   MdPalette,
   MdCloud,
   MdBuild,
-} from "react-icons/md"; // Importing Material Design icons
-import workingPeople from "../assets/i-0.png";
+} from "react-icons/md";
+import workingPeople from "../../assets/i-0.png";
 
 function HomePage() {
   const data = [
@@ -19,28 +19,28 @@ function HomePage() {
       id: 0,
       title: "Software Development",
       description:
-        "👨‍💻 We develop custom software solutions that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality software solutions.",
+        " We develop custom software solutions that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality software solutions.",
       icon: <MdCode />,
     },
     {
       id: 1,
       title: "Web Development",
       description:
-        "🌐 We build web applications that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality web applications.",
+        " We build web applications that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality web applications.",
       icon: <MdWeb />,
     },
     {
       id: 2,
       title: "Mobile App Development",
       description:
-        "📱 We develop mobile applications that are user-friendly, scalable, and secure. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality mobile applications.",
+        " We develop mobile applications that are user-friendly, scalable, and secure. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality mobile applications.",
       icon: <MdPhoneAndroid />,
     },
     {
       id: 3,
       title: "UI/UX Design",
       description:
-        "🎨 We design user-friendly, intuitive, and visually appealing interfaces that enhance user experience. Our team of experts is proficient in the latest design tools and technologies to deliver high-quality designs.",
+        "We design user-friendly, intuitive, and visually appealing interfaces that enhance user experience. Our team of experts is proficient in the latest design tools and technologies to deliver high-quality designs.",
       icon: <MdPalette />,
     },
 
@@ -48,17 +48,18 @@ function HomePage() {
       id: 4,
       title: "Cloud Services",
       description:
-        "☁️ We provide cloud services that are scalable, secure, and reliable. Our team of experts is proficient in the latest cloud technologies and platforms to deliver high-quality cloud services.",
+        " We provide cloud services that are scalable, secure, and reliable. Our team of experts is proficient in the latest cloud technologies and platforms to deliver high-quality cloud services.",
       icon: <MdCloud />,
     },
     {
       id: 5,
       title: "DevOps",
       description:
-        "🔧 We provide DevOps services that enable continuous integration and continuous deployment. Our team of experts is proficient in the latest DevOps tools and technologies to deliver high-quality DevOps services.",
+        " We provide DevOps services that enable continuous integration and continuous deployment. Our team of experts is proficient in the latest DevOps tools and technologies to deliver high-quality DevOps services.",
       icon: <MdBuild />,
     },
   ];
+
   return (
     <>
       <div
@@ -73,7 +74,6 @@ function HomePage() {
             Business
           </span>
           <br />
-
           <span className="text-4xl text-white ">With</span>
           <br />
           <span className="text-6xl relative left-28 -top-2 text-yellow-300 font-bold ">
@@ -82,14 +82,14 @@ function HomePage() {
           <br />
           <div className="relative top-5">
             <Link to="/contact">
-              <button className="bg-yellow-300 text-gray-800 px-4 py-2 rounded-full absolute ">
+              <button className="bg-yellow-300 text-gray-800 px-4 py-2 rounded-full absolute  animate-pulse">
                 Work With Us
               </button>
             </Link>
           </div>
         </div>
         <div className="m-auto">
-          <FaAngleDown className="text-white absolute text-2xl bottom-20 " />
+          <FaAngleDown className="text-white absolute text-4xl bottom-10 animate-bounce" />
         </div>
       </div>
       <div className="bg-tertiary py-10">
@@ -105,8 +105,24 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Skills Overview */}
-      <div className="bg-secondary py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
+        <div className=" flex-col items-center md:items-start relative top-20 left-40 w-3/4 inline-block">
+          <div className="font-bold  mb-4 text-4xl font-body ">
+            The Nepcodes
+          </div>
+          <div className="mb-4 text-xl text-secondary_text font-body">
+            At Nepcodes, client satisfaction is a top priority. We are 100%
+            oriented around solving your problems and making you successful.When
+            you have a job for us, we move mountains to make sure it’s done well
+            and on time.
+          </div>
+        </div>
+        <div className="flex justify-center md:justify-end px-32">
+          <img src={workingPeople} alt="" className="max-w-96" />
+        </div>
+      </div>
+
+      <div className="bg-tertiary py-10">
         <div className="container mx-auto">
           <h2 className="text-3xl text-center text-primary_text font-body mb-4">
             Skills Overview
@@ -119,7 +135,7 @@ function HomePage() {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="bg-tertiary p-6 rounded-lg shadow-md transition-transform hover:scale-105"
+                className="bg-white p-6 rounded-lg shadow-md transition-transform hover:scale-105"
               >
                 <div className="flex items-center mb-4">
                   <div className="mr-2 text-2xl">{item.icon}</div>

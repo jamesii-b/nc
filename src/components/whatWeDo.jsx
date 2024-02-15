@@ -1,6 +1,6 @@
 import React from "react";
 import MaintenancePage from "./maintenance";
-function About() {
+function WhatWeDo() {
   return (
     <div>
       <MaintenancePage />
@@ -8,4 +8,4 @@ function About() {
   );
 }
 
-export default About;
+export default WhatWeDo;

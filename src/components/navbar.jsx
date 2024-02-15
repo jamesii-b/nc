@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <nav className=" fixed left-0 w-full bg-transparent text-white z-50 h-20 top-5 inset-0">
+    <nav
+      className={`fixed left-0 w-full text-white z-50 h-20 top-0 inset-0 transition-colors duration-300 ${
+        scrolled ? "bg-gray-900" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="px-24 space-x-16">
           <Link
