@@ -5,9 +5,9 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <nav className="bottom-0 left-0 w-full bg-transparent text-white z-50 absolute h-20 inset-0">
+    <nav className=" fixed left-0 w-full bg-transparent text-white z-50 h-20 top-5 inset-0">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div>
+        <div className="px-24 space-x-16">
           <Link
             to="/"
             className={`text-lg font-semibold ${

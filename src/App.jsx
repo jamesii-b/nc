@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar";
 import About from "./components/about";
 import NoPage from "./components/invalidPage";
+import BottomNavBar from "./components/bottom-nav_bar";
 import whatWeDo from "./components/what-we-do";
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
 
         <Route path="*" element={<NoPage />} />
       </Routes>
+      <BottomNavBar />
     </BrowserRouter>
   );
 }
