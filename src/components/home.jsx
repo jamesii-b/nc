@@ -2,74 +2,67 @@ import React from "react";
 import img01 from "../assets/img-main.jpg";
 import { Link } from "react-router-dom";
 import pathImage from "../assets/service-path.png";
+import { FaAngleDown } from "react-icons/fa";
 import {
-  FaAngleDown,
-  FaCogs,
-  FaPencilAlt,
-  FaCode,
-  FaRocket,
-  FaChartLine,
-} from "react-icons/fa";
+  MdCode,
+  MdWeb,
+  MdPhoneAndroid,
+  MdPalette,
+  MdCloud,
+  MdBuild,
+} from "react-icons/md"; // Importing Material Design icons
+import workingPeople from "../assets/i-0.png";
 
 function HomePage() {
-  const datum = [
+  const data = [
     {
-      title: "Explore",
-      icon: <FaPencilAlt />,
-      description: [
-        "Discovery Sessions",
-        "Workflow Analysis",
-        "Ideation Sessions",
-        "Competitive Analysis",
-        "Goal Definition",
-      ],
+      id: 0,
+      title: "Software Development",
+      description:
+        "👨‍💻 We develop custom software solutions that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality software solutions.",
+      icon: <MdCode />,
     },
     {
-      title: "Create",
-      icon: <FaCogs />,
-      description: [
-        "UI/UX Design",
-        "Interactive Prototypes",
-        "Branding Solutions",
-        "Visual Identity",
-      ],
+      id: 1,
+      title: "Web Development",
+      description:
+        "🌐 We build web applications that are scalable, secure, and user-friendly. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality web applications.",
+      icon: <MdWeb />,
     },
     {
-      title: "Develop",
-      icon: <FaCode />,
-      description: [
-        "Web & Mobile App Development",
-        "AI & Machine Learning Integration",
-        "Quality Assurance",
-        "Continuous Deployment",
-      ],
+      id: 2,
+      title: "Mobile App Development",
+      description:
+        "📱 We develop mobile applications that are user-friendly, scalable, and secure. Our team of experts is proficient in the latest technologies and frameworks to deliver high-quality mobile applications.",
+      icon: <MdPhoneAndroid />,
     },
     {
-      title: "Launch",
-      icon: <FaRocket />,
-      description: [
-        "Cloud Infrastructure Setup",
-        "Performance Monitoring",
-        "Data Management",
-        "Robust Security Measures",
-      ],
+      id: 3,
+      title: "UI/UX Design",
+      description:
+        "🎨 We design user-friendly, intuitive, and visually appealing interfaces that enhance user experience. Our team of experts is proficient in the latest design tools and technologies to deliver high-quality designs.",
+      icon: <MdPalette />,
+    },
+
+    {
+      id: 4,
+      title: "Cloud Services",
+      description:
+        "☁️ We provide cloud services that are scalable, secure, and reliable. Our team of experts is proficient in the latest cloud technologies and platforms to deliver high-quality cloud services.",
+      icon: <MdCloud />,
     },
     {
-      title: "Expand",
-      icon: <FaChartLine />,
-      description: [
-        "Product Performance Analysis",
-        "Data-driven Insights",
-        "Process Automation",
-        "Optimization Strategies",
-      ],
+      id: 5,
+      title: "DevOps",
+      description:
+        "🔧 We provide DevOps services that enable continuous integration and continuous deployment. Our team of experts is proficient in the latest DevOps tools and technologies to deliver high-quality DevOps services.",
+      icon: <MdBuild />,
     },
   ];
-
   return (
     <>
       <div
-        className="h-screen w-screen relative flex bg-cover bg-center bg-fixed bg-no-repeat"
+        className="h-screen w-screen relative flex bg-cover bg-center bg-fixed bg-no-repeat max-w-full"
         style={{ backgroundImage: `url(${img01})`, backgroundSize: "cover" }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -99,8 +92,8 @@ function HomePage() {
           <FaAngleDown className="text-white absolute text-2xl bottom-20 " />
         </div>
       </div>
-      <div className="bg-tertiary  py-10">
-        <div className="container mx-auto text-center ">
+      <div className="bg-tertiary py-10">
+        <div className="container mx-auto text-center">
           <h2 className="text-3xl text-primary_text font-body mb-4">
             Create, Construct, and Expand Your Digital Vision
           </h2>
@@ -109,6 +102,33 @@ function HomePage() {
             for your digital journey, we're here to be your secret weapon.
           </p>
           <img src={pathImage} className="w-auto" alt="" />
+        </div>
+      </div>
+
+      {/* Skills Overview */}
+      <div className="bg-secondary py-10">
+        <div className="container mx-auto">
+          <h2 className="text-3xl text-center text-primary_text font-body mb-4">
+            Skills Overview
+          </h2>
+          <p className="text-lg text-center text-secondary_text mb-8 font-body">
+            We incorporate across a wide range of technologies, optimal
+            methodologies, application scenarios, and sectors.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="bg-tertiary p-6 rounded-lg shadow-md transition-transform hover:scale-105"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="mr-2 text-2xl">{item.icon}</div>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                </div>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
