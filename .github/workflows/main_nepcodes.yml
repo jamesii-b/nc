@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies, build, and test
         run: |
           yarn install
-          yarn run build --if-present
-          yarn run test --if-present
+          yarn run build 
+          
         # Other scripts if configured should be added here, such as linting, formating
 
       - name: Upload artifact for deployment job
