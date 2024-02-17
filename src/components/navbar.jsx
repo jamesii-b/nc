@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const NavBar = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,14 @@ const NavBar = () => {
     };
   }, [scrolled]);
 
+  const handleHover = () => {
+    setShowCategories(true);
+  };
+
+  const handleLeave = () => {
+    setShowCategories(false);
+  };
+
   return (
     <nav
       className={`fixed left-0 w-full text-white z-50 h-20 top-0 inset-0 transition-colors duration-300 ${
@@ -27,7 +36,7 @@ const NavBar = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="px-24 space-x-16">
+        <div className="px-8 space-x-8">
           <Link
             to="/"
             className={`text-lg font-semibold ${
@@ -40,12 +49,70 @@ const NavBar = () => {
           </Link>
           <Link
             to="/what-we-do"
-            className={`ml-4 text-lg font-semibold ${
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            className={`ml-4 text-lg font-semibold relative ${
               location.pathname === "/what-we-do"
                 ? "text-yellow-300 overline leading-loose"
                 : "hover:text-yellow-300"
             }`}
           >
+            {showCategories && (
+              <span className="absolute top-full left-0 w-max -ml-4">
+                <div className="bg-black bg-opacity-80 p-4 rounded-md">
+                  <div>
+                    <div className=" w-64 inline-block ">
+                      <Link
+                        to="/what-we-do/development"
+                        className="text-lg mr-6 font-semibold block mb-4"
+                      >
+                        Web Development
+                        <div className="text-sm text-white mt-2">
+                          We provide web development services that are scalable,
+                          secure, and reliable.
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="w-64 inline-block">
+                      <Link
+                        to="/what-we-do/ui-ux"
+                        className="text-lg font-semibold block"
+                      >
+                        UI/UX Design
+                        <div className="text-sm text-white mt-2">
+                          We design user-friendly, intuitive, and visually
+                          appealing interfaces that enhance user experience.
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="w-64 inline-block">
+                    <Link
+                      to="/what-we-do/development"
+                      className="text-lg mr-6 font-semibold block mb-4"
+                    >
+                      Mobile Development
+                      <div className="text-sm text-white mt-2">
+                        We provide web development services that are scalable,
+                        secure, and reliable.
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="w-64 inline-block">
+                    <Link
+                      to="/what-we-do/ui-ux"
+                      className="text-lg font-semibold block"
+                    >
+                      DevOps
+                      <div className="text-sm text-white mt-2">
+                        We provide web development services that are scalable,
+                        secure, and reliable.
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </span>
+            )}
             What We Do?
           </Link>
           <Link

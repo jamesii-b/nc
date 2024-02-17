@@ -7,6 +7,8 @@ import NoPage from "./components/invalidPage";
 import BottomNavBar from "./components/bottom-nav_bar";
 import WhatWeDo from "./components/whatWeDo";
 import ContactPage from "./components/contact/contact";
+import developmentPage from "./components/what-we-do/Development/development-page";
+import UiUxPage from "./components/what-we-do/UI/UX/UiUx-page";
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,8 +16,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactPage />} />
         <Route path="/what-we-do" element={<WhatWeDo />} />
+        <Route path="/what-we-do/development" element={< developmentPage/>} />
+        <Route path="/what-we-do/ui-ux" element={< UiUxPage/>} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       <BottomNavBar />

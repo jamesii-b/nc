@@ -67,7 +67,7 @@ function HomePage() {
         style={{ backgroundImage: `url(${img01})`, backgroundSize: "cover" }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute items-center top-64 left-40 font-body">
+        <div className="absolute items-center top-72 left-40 font-body">
           <span className="text-4xl text-white ">Empowering</span>
           <br />
           <span className="text-6xl relative left-16 text-yellow-300 font-bold  ">
@@ -76,7 +76,7 @@ function HomePage() {
           <br />
           <span className="text-4xl text-white ">With</span>
           <br />
-          <span className="text-6xl relative left-28 -top-2 text-yellow-300 font-bold ">
+          <span className="text-6xl relative left-16  text-yellow-300 font-bold ">
             Technology
           </span>
           <br />
@@ -89,10 +89,10 @@ function HomePage() {
           </div>
         </div>
         <div className="m-auto">
-          <FaAngleDown className="text-white absolute text-4xl bottom-10 animate-bounce" />
+          <FaAngleDown className="text-white absolute text-4xl bottom-10 animate-bounce " />
         </div>
       </div>
-      <div className="bg-tertiary py-10">
+      <div className="bg-tertiary py-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl text-primary_text font-body mb-4">
             Create, Construct, and Expand Your Digital Vision
@@ -110,6 +110,11 @@ function HomePage() {
           <div className="font-bold  mb-4 text-4xl font-body ">
             The Nepcodes
           </div>
+          <div className="font-medium text-2xl font-body ">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus illo, perspiciatis at ut non quis.
+          </div>
+          <div className="content-none"> x</div>
           <div className="mb-4 text-xl text-secondary_text font-body">
             At Nepcodes, client satisfaction is a top priority. We are 100%
             oriented around solving your problems and making you successful.When
@@ -117,8 +122,8 @@ function HomePage() {
             and on time.
           </div>
         </div>
-        <div className="flex justify-center md:justify-end px-32">
-          <img src={workingPeople} alt="" className="max-w-96" />
+        <div className="flex justify-center md:justify-end w-fit px-32">
+          <img src={workingPeople} alt="" className="max-w-80" />
         </div>
       </div>
 
