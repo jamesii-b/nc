@@ -30,8 +30,8 @@ function NavBar() {
 
   return (
     <nav
-      className={`fixed left-0 w-full text-white z-50 h-20 top-0 inset-0 transition-colors duration-300 ${
-        scrolled ? "bg-gray-900" : "bg-transparent"
+      className={`fixed left-0 w-full text-secondary_text z-50 h-20 top-0 inset-0 transition-colors duration-300 ${
+        scrolled ? "bg-secondary" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -40,8 +40,8 @@ function NavBar() {
             to="/"
             className={`text-lg font-semibold ${
               location.pathname === "/"
-                ? "text-yellow-300 overline leading-loose "
-                : "hover:text-yellow-300"
+                ? "text-blue-300 overline leading-loose "
+                : "hover:text-blue-300"
             }`}
           >
             Home
@@ -52,8 +52,8 @@ function NavBar() {
             onMouseLeave={handleLeave}
             className={`ml-4 text-lg font-semibold relative ${
               location.pathname.startsWith("/what-we-do")
-                ? "text-yellow-300 overline leading-loose"
-                : "hover:text-yellow-300"
+                ? "text-blue-300 overline leading-loose"
+                : "hover:text-blue-300"
             }`}
           >
             {showCategories && (
@@ -66,7 +66,7 @@ function NavBar() {
                         className="text-lg mr-6 font-semibold block mb-4"
                       >
                         Web Development
-                        <div className="text-sm text-white mt-2">
+                        <div className="text-sm text-black mt-2">
                           We provide web development services that are scalable,
                           secure, and reliable.
                         </div>
@@ -78,7 +78,7 @@ function NavBar() {
                         className="text-lg font-semibold block"
                       >
                         UI/UX Design
-                        <div className="text-sm text-white mt-2">
+                        <div className="text-sm text-black mt-2">
                           We design user-friendly, intuitive, and visually
                           appealing interfaces that enhance user experience.
                         </div>
@@ -91,7 +91,7 @@ function NavBar() {
                       className="text-lg mr-6 font-semibold block mb-4"
                     >
                       Mobile Development
-                      <div className="text-sm text-white mt-2">
+                      <div className="text-sm text-black mt-2">
                         We provide web development services that are scalable,
                         secure, and reliable.
                       </div>
@@ -103,7 +103,7 @@ function NavBar() {
                       className="text-lg font-semibold block"
                     >
                       DevOps
-                      <div className="text-sm text-white mt-2">
+                      <div className="text-sm text-black mt-2">
                         We provide web development services that are scalable,
                         secure, and reliable.
                       </div>
@@ -118,8 +118,8 @@ function NavBar() {
             to="/about"
             className={`ml-4 text-lg font-semibold ${
               location.pathname === "/about"
-                ? "text-yellow-300 overline leading-loose"
-                : "hover:text-yellow-300"
+                ? "text-blue-300 overline leading-loose"
+                : "hover:text-blue-300"
             }`}
           >
             About
@@ -127,7 +127,7 @@ function NavBar() {
         </div>
         <div>
           <Link to="/contact">
-            <button className="bg-yellow-300 text-gray-800 px-4 py-2 rounded-full">
+            <button className="bg-blue-400 text-gray-800 px-4 py-2 rounded-full">
               Work With Us
             </button>
           </Link>

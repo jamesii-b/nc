@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,6 +32,7 @@ function WhyUs() {
   ];
 
   const [displayIndex, setDisplayIndex] = useState(null);
+  const listRef = useRef(null);
 
   const mouseEntered = (index) => {
     setDisplayIndex(index);
@@ -44,8 +45,8 @@ function WhyUs() {
   return (
     <>
       <div
-        className="space-y-4 inline-block ml-20 mt-3 min-h-screen"
-        style={{ minWidth: "450px" }}
+        className="space-y-4 inline-block ml-20 mt-3 min-h-screen/1.5 w-1/2 bg-gray-100 p-8 rounded-lg shadow-lg"
+        style={{ minWidth: "480px" }}
       >
         {data.map((item, index) => (
           <div
@@ -72,13 +73,13 @@ function WhyUs() {
               style={{
                 height:
                   displayIndex === index
-                    ? `${document.getElementById("list").clientHeight}px`
+                    ? `${listRef.current.clientHeight}px`
                     : "0px",
                 overflow: "hidden",
                 transition: "height 0.5s ease-in-out",
               }}
             >
-              <div id="list" className="text-base py-3   text-gray-700">
+              <div ref={listRef} className="text-base py-3 text-gray-700">
                 {item.content}
               </div>
             </div>
