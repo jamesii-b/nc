@@ -6,4 +6,4 @@ function developmentPage() {
   )
 }
 
-export default developmentPage
+export default developmentPage;

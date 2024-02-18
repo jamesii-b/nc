@@ -5,10 +5,10 @@ import NavBar from "./components/navbar";
 import About from "./components/about";
 import NoPage from "./components/invalidPage";
 import BottomNavBar from "./components/bottom-nav_bar";
-import WhatWeDo from "./components/whatWeDo";
+import WhatWeDo from "./components/what-we-do/whatWeDo";
 import ContactPage from "./components/contact/contact";
-import developmentPage from "./components/what-we-do/Development/development-page";
 import UiUxPage from "./components/what-we-do/UI/UX/UiUx-page";
+import developmentPage from "./components/what-we-do/Development/development-page";
 export default function App() {
   return (
     <BrowserRouter>
