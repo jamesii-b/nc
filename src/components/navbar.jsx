@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-const NavBar = () => {
+function NavBar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
@@ -52,7 +51,7 @@ const NavBar = () => {
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
             className={`ml-4 text-lg font-semibold relative ${
-              location.pathname === "/what-we-do"
+              location.pathname.startsWith("/what-we-do")
                 ? "text-yellow-300 overline leading-loose"
                 : "hover:text-yellow-300"
             }`}
@@ -136,6 +135,6 @@ const NavBar = () => {
       </div>
     </nav>
   );
-};
+}
 
 export default NavBar;
