@@ -5,7 +5,7 @@ import about2 from "../../assets/about2.png";
 import about3 from "../../assets/about3.png";
 import "./styleSheet.css";
 import about01 from "../../assets/about01.jpg";
-
+import Testimonial from "../reusable/testimonial";
 const aboutUsSections = [
   {
     title: "Empowering Tomorrow",
@@ -54,6 +54,7 @@ function About() {
         </div>
         <div className="h-3"></div>
       </div>
+      <Testimonial />
     </>
   );
 }
