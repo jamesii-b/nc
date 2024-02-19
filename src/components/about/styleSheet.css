@@ -1,0 +1,11 @@
+/* Add this CSS to your stylesheet */
+.bg-blur {
+  background-image: url('your-background-image.jpg'); /* Replace with your actual background image */
+  filter: blur(10px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

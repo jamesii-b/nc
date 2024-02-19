@@ -1,9 +1,8 @@
 import React from "react";
-import s1 from "../../assets/s1.png";
-
+import LazyLoad from "react-lazyload";
 function CenterDiv({ title, sub_title, content, image }) {
   return (
-    <div className="bg-gradient-to-br from-blue-900 to-blue-700 px-5 my-10 lg:px-20 py-16 text-white text-xl mx-40 max-w-7xl flex flex-col lg:flex-row lg:items-center lg:justify-center shadow-2xl">
+    <div className="bg-gradient-to-br from-blue-900 to-blue-700 my-10 lg:px-20 py-16 text-white text-xl mx-60 max-w-7xl flex flex-col lg:flex-row lg:items-center lg:justify-center shadow-2xl">
       <div id="x" className="lg:w-1/2 lg:mr-8 text-center lg:text-left">
         <div className="text-3xl font-bold mb-4">{title}</div>
         <h3 className="text-2xl font-semibold mb-4">{sub_title}</h3>
@@ -13,11 +12,13 @@ function CenterDiv({ title, sub_title, content, image }) {
         </button>
       </div>
       <div id="y" className="min-w-">
-        <img
-          src={image}
-          alt=""
-          className="h-96 hover:shadow-lg transition duration-300 transform hover:scale-105 rounded-lg shadow-lg"
-        />
+        <LazyLoad height={200} once>
+          <img
+            src={image}
+            alt=""
+            className="lazyload h-96 hover:shadow-lg transition duration-300 transform hover:scale-105 rounded-lg shadow-lg"
+          />
+        </LazyLoad>
       </div>
     </div>
   );

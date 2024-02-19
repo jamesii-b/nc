@@ -1,14 +1,17 @@
 import React from "react";
+import CenterDiv from "../reusable/centerDiv";
 import about1 from "../../assets/about1.png";
 import about2 from "../../assets/about2.png";
 import about3 from "../../assets/about3.png";
-import CenterDiv from "../reusable/centerDiv";
+import "./styleSheet.css";
+import about01 from "../../assets/about01.jpg";
+
 const aboutUsSections = [
   {
-    title: "Empowering Tomorrow's Solutions Today",
+    title: "Empowering Tomorrow",
     subtitle: "Driving Innovation with a Fresh Perspective",
     content:
-      "At [Company Name], we are committed to shaping the future of IT solutions. With our fresh perspective and dedication to innovation, we empower businesses to embrace the opportunities of tomorrow, today.",
+      "We are committed to shaping the future of IT solutions. With our fresh perspective and dedication to innovation, we empower businesses to embrace the opportunities of tomorrow, today.",
     image: about1,
   },
   {
@@ -30,11 +33,18 @@ const aboutUsSections = [
 function About() {
   return (
     <>
-      <div className="bg-black ">
-        <div className="bg-red-100 h-96">Center Box</div>
-        <div className="my-10">
+      <div class="relative h-fit">
+        <img src={about01} class="h-96 object-cover min-w-full" alt="" />
+        <div class="absolute z-50 -bottom-20 left-10 w-96 h-60 bg-blue-400 text-center opacity-95 text-secondary pt-20 text-3xl font-body font-bold transform translate-x-5 translate-y-5">
+          About Us
+        </div>
+      </div>
+      <div className="bg-black h-20 "></div>
+      <div className="bg-black relative  py-5">
+        <div className="mb-10">
           {aboutUsSections.map((section, index) => (
             <CenterDiv
+              key={index} // Add key prop for each child component
               title={section.title}
               sub_title={section.subtitle}
               content={section.content}
