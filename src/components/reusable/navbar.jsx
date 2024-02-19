@@ -58,7 +58,7 @@ function NavBar() {
           >
             {showCategories && (
               <span className="absolute top-full left-0 w-max -ml-4">
-                <div className="bg-black bg-opacity-80 p-4 rounded-md">
+                <div className="bg-blue-100 bg-opacity-80 p-4 rounded-md">
                   <div>
                     <div className=" w-64 inline-block ">
                       <Link
