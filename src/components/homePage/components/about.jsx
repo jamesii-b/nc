@@ -3,23 +3,22 @@ import workingPeople from "../../../assets/i-0.png";
 
 function AboutSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
-      <div className=" flex-col items-center md:items-start relative top-20 left-40 w-3/4 inline-block">
-        <div className="font-bold  mb-4 text-4xl font-body ">The Nepcodes</div>
-        <div className="font-medium text-2xl font-body ">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          illo, perspiciatis at ut non quis.
+    <div className="container mx-auto px-4 py-10 md:px-20 lg:px-40">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-center items-center md:items-start">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center md:text-left"> Nepcodes</h2>
+          <p className="text-lg sm:text-base leading-relaxed text-gray-700 mb-4 text-center md:text-left">
+            At Nepcodes, we are dedicated to providing innovative solutions tailored to meet your unique needs. With a commitment to excellence, we strive to exceed your expectations at every step.
+          </p>
+          <p className="text-lg sm:text-base leading-relaxed text-gray-700 mb-4 text-center md:text-left">
+            Our unwavering focus on client satisfaction drives us to deliver outstanding results. We approach every project with passion and determination, ensuring your success is our top priority.
+          </p>
         </div>
-        <div className="content-none"> x</div>
-        <div className="mb-4 text-xl text-secondary_text font-body">
-          At Nepcodes, client satisfaction is a top priority. We are 100%
-          oriented around solving your problems and making you successful.When
-          you have a job for us, we move mountains to make sure it’s done well
-          and on time.
+        <div className="flex justify-center md:justify-end">
+          <div className="max-w-96 w-full">
+            <img src={workingPeople} alt="Working People" className="w-2/3" />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center md:justify-end w-fit px-32">
-        <img src={workingPeople} alt="" className="max-w-80" />
       </div>
     </div>
   );
