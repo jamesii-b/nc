@@ -1,0 +1,16 @@
+.button {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px;
+  width: 200px;
+  padding: 10px;
+  /* color: #273c75; */
+  transition: all 0.5s ease-out;
+  background: linear-gradient(to right, #e84118 50%, #FFF 50%);
+  background-size: 200% 100%;
+  background-position: right;
+}
+
+.button.visible {
+  background-position: left;
+}
