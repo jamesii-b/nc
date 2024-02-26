@@ -1,27 +1,40 @@
 import React from "react";
+// import { useHistory } from "react-router-dom";
 
 function BottomNavBar() {
+  // const history = useHistory();
+
+  // const handleGetProposal = () => {
+  //   // Handle logic for getting proposal
+  //   // For example, navigate to a specific route
+  //   history.push("/get-proposal");
+  // };
+
   return (
-    <div className="bg-sub_color min-h-max h-auto w-full text-white grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-20 py-10">
+    <div className="bg-sub_color min-h-max h-auto w-full z-50 bg-black text-white grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4 md:px-10 py-6 md:py-10">
       <div className="flex flex-col items-center md:items-start">
-        <div className="font-bold text-2xl mb-4">Nepcodes</div>
-        <div className="mb-4">Your IT Companion.</div>
+        <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">Nepcodes</div>
+        <div className="mb-2 md:mb-4 text-sm md:text-base text-gray-300">Your IT Companion.</div>
       </div>
       <div className="flex flex-col items-center md:items-start">
-        <div className="font-bold text-2xl mb-4">About Company</div>
+        <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">About Company</div>
         <ul className="list-none">
-          <li className="mb-2">About</li>
-          <li className="mb-2">Services</li>
-          <li className="mb-2">Work</li>
-          <li>Team</li>
+          <li className="mb-1 md:mb-2">About</li>
+          <li className="mb-1 md:mb-2">Services</li>
+          <li className="mb-1 md:mb-2">Work</li>
+          <li className="mb-1 md:mb-2">Team</li>
         </ul>
       </div>
       <div className="flex flex-col items-center md:items-start">
-        <div className="font-bold text-2xl mb-4">Support</div>
-        <ul className="list-none">
-          <li className="mb-2">FAQ</li>
-          <li className="mb-2">jamesbhattarai14@gmail.com</li>
-          <li>+977-9863184471</li>
+        <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">Support</div>
+        <div className=" flex flex-col md:flex-row items-center">
+          <input type="email" placeholder="Enter your email" className="bg-white   text-black font-bold py-2 px-4 md:mr-2 mb-2 md:mb-0 w-full md:w-auto rounded-md shadow-md" style={{ outline: "none" }} />
+          <button className="bg-blue-500  hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out w-full md:w-auto">
+            Get a Proposal
+          </button>
+        </div>
+        <ul className="list-none mt-3">
+          <li className="mb-1 md:mb-2">FAQ</li>
         </ul>
       </div>
     </div>

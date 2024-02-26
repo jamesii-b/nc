@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React from "react";
 import HeroSection from "./components/heroSection";
 import TestimonialSection from "./components/testimonial";
 import FeatureSection from "./components/features/features";
 import SkillSection from "./components/skillSection";
 import VisualSection from "./components/visionSection";
 import AndMore from "./components/andmore";
-
+import HeroCTA from "./components/HeroCTA";
+import CaseStudySection from "./components/caseStudy";
 function HomePage() {
 
 
@@ -15,13 +16,13 @@ function HomePage() {
       <TestimonialSection />
       <SkillSection />
       <VisualSection />
-      {/* <HelloWorldComponent /> */}
       <FeatureSection />
       <AndMore />
+      <CaseStudySection />
+      <HeroCTA />
     </>
   );
 }
 
 export default HomePage;
-
 

@@ -6,7 +6,7 @@ function ImageRight({ image }: { image: string }) {
     <div className="flex justify-center md:justify-end">
         <div className="flex justify-center md:justify-end">
           <div className="max-w-96 w-full">
-            <img src={image} alt="Working People" className="w-3/4 " />
+            <img src={image} alt="Working People" className="w-3/4 relative left-24 " />
           </div>
         </div>
     </div>

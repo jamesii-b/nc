@@ -1,56 +1,50 @@
-import React from "react";
-import { motion } from "framer-motion";
-import softwareDevelopmentImage from "../../../assets/hero/graphics.png";
-import uiUxDesignImage from "../../../assets/hero/graphics.png";
-import webDevelopmentImage from "../../../assets/hero/graphics.png";
-import mobileAppDevelopmentImage from "../../../assets/hero/graphics.png";
-import iotImage from "../../../assets/hero/graphics.png";
+import React from 'react';
 
 const SkillSection = () => {
   return (
-    <div className="bg-gray-100 py-20">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center  text-gray-800 mb-12">Our Services</h1>
-        <div className="grid  grid-cols-1 md:grid-cols-3 bg-pink-200 gap-8">
-          <SkillCard
-            title="Software Development"
-            description="Transform your ideas into reality with our bespoke software development solutions."
-            image={softwareDevelopmentImage}
-          />
-          <SkillCard
-            title="Internet of Things (IoT)"
-            description="Unlock new possibilities with our innovative Internet of Things solutions."
-            image={iotImage}
-          />
+    <div className='container mx-auto px-10 mt-20'>
+      <h1 className='font-bold text-4xl text-center mb-10'>
+        Our Services
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Column 1 */}
+        <div className="relative border border-gray-300 pr-4 mb-6 md:mb-0 group overflow-hidden rounded-xl transition duration-300 ease-in-out transform hover:scale-110 hover:border-blue-500 hover:shadow-lg">
+          <div className="p-4">
+            <h3 className="text-blue-500">
+              Development
+            </h3>
+            <h2 className="text-lg font-bold">Software Development</h2>
+            <p className="mt-2 mb-4">We specialize in creating robust and scalable software solutions tailored to your specific needs. From web applications to mobile apps, our development team ensures high-quality products that meet your business objectives.</p>
+            <button className="text-white bg-blue-500 rounded-xl px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out">Learn More</button>
+          </div>
+        </div>
+
+        {/* Column 2 */}
+        <div className="relative border border-gray-300 pr-4 mb-6 md:mb-0 group overflow-hidden rounded-xl transition duration-300 ease-in-out transform hover:scale-110 hover:border-blue-500 hover:shadow-lg">
+          <div className="p-4">
+            <h3 className="text-blue-500">
+              Graphics
+            </h3>
+            <h2 className="text-lg font-bold">UI/UX Design</h2>
+            <p className="mt-2 mb-4">Our team of designers crafts captivating user experiences and intuitive interfaces to elevate your brand. Whether it's a website redesign or creating a brand new application, we focus on usability and aesthetics to engage your audience effectively.</p>
+            <button className="text-white bg-blue-500 rounded-xl px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out">Learn More</button>
+          </div>
+        </div>
+
+        {/* Column 3 */}
+        <div className="relative border border-gray-300 pl-4 mb-6 md:mb-0 group overflow-hidden rounded-xl transition duration-300 ease-in-out transform hover:scale-110 hover:border-blue-500 hover:shadow-lg">
+          <div className="p-4">
+            <h3 className="text-blue-500">
+              Upgrade
+            </h3>
+            <h2 className="text-lg font-bold">Upgrade Existing Application</h2>
+            <p className="mt-2 mb-4">Enhance the functionality and performance of your current applications with our seamless upgrade services. Whether it's adding new features, optimizing code, or improving user experience, our team ensures your application stays competitive in the market.</p>
+            <button className="text-white bg-blue-500 rounded-xl px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out">Learn More</button>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-const SkillCard = ({ title, description, image }) => {
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="relative group"
-    >
-      <div className="relative overflow-hidden rounded-lg mx-auto shadow-lg">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-auto transform transition duration-300 ease-in-out group-hover:scale-125"
-        />
-        <div className="absolute inset-0 bg-blue-200 opacity-90 rounded-lg transition duration-300 ease-in-out group-hover:opacity-60"></div>
-      </div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="p-6 text-center">
-          <h2 className="text-xl font-bold mb-2 text-white z-10">{title}</h2>
-          <p className="text-gray-700">{description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+}
 
 export default SkillSection;
