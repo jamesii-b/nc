@@ -30,15 +30,12 @@ const aboutUsSections = [
   },
 ];
 
+import HeadBar from "../reusable/head-bar";
+
 function About() {
   return (
     <>
-      <div class="relative h-fit">
-        <img src={about01} class="h-96 object-cover min-w-full" alt="" />
-        <div class="absolute z-50 -bottom-20 left-10 w-96 h-60 bg-blue-400 text-center opacity-95 text-secondary pt-20 text-3xl font-body font-bold transform translate-x-5 translate-y-5">
-          About Us
-        </div>
-      </div>
+      <HeadBar title="About Us" imageSrc={about01} backgroundColor="bg-primary" />
       <div className="bg-black h-20 "></div>
       <div className="bg-black relative  py-5">
         <div className="mb-10">

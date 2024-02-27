@@ -7,29 +7,31 @@ import WhyUs from "../whyUs";
 import { Link } from "react-router-dom";
 import { FaDesktop, FaPalette } from "react-icons/fa";
 import whatwedo01 from "../../assets/whatwedo01.png";
+import HeadBar from "../reusable/head-bar";
+import HeroCTA from "../homePage/components/HeroCTA";
 const WhatWeDo = () => {
   return (
     <>
-      <div>
-        <img src={whatwedo01} alt="" />
-        <div>
-          <h1 className="text-4xl font-bold text-center bg-blue-400 inline-block p-20 relative left-20 -top-14 text-gray-800 pt-8">
-            What We Do
-          </h1>
-        </div>
-      </div>
-      <div className="container mx-auto relative -top-24 px-24">
+      <HeadBar title="What We Do" imageSrc={whatwedo01} backgroundColor="bg-primary" />
+      <div className="container mx-auto py-20 px-24">
         <div className="flex flex-col md:flex-row items-center mb-8">
           <div className="w-full md:w-1/2 mb-4 md:mb-0 pr-8">
             <h1 className="text-4xl font-bold mb-4 text-gray-800">
               What We Do
             </h1>
             <p className="text-lg text-gray-700">
-              We specialize in providing top-notch IT outsourcing services
-              tailored to meet your development and graphic design needs. Our
-              mission is to transform your ideas into reality by leveraging
-              cutting-edge technologies and creative expertise.
+              We specialize in providing top-notch IT outsourcing services tailored
+              to meet your development and graphic design needs. Our mission is to
+              transform your ideas into reality by leveraging cutting-edge
+              technologies and creative expertise.
             </p>
+            <p className="mt-4 text-lg text-gray-700">
+              Our team consists of highly skilled professionals dedicated to
+              delivering exceptional results. With years of experience in the
+              industry, we understand the importance of staying ahead of the curve
+              and continuously adapting to new trends and technologies.
+            </p>
+
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <img
@@ -41,70 +43,75 @@ const WhatWeDo = () => {
         </div>
       </div>
 
-      <div className="bg-gray-100 py-8">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-            Our Services
-          </h2>
-          <div className="grid md:grid-cols-1 ml-40 gap-8 font-body">
-            {/* Development Box */}
-            <div className="flex flex-col min-w-screen/2 md:flex-row">
-              <ServiceBox
-                title="Development"
-                description="We Develop fast and extensive software"
-                color="bg-blue-200"
-                icon={<FaDesktop className="text-5xl text-blue-500" />}
-                image={s1}
-              />
-              <img src={s1} className="h-96" alt="" />
+      <div className="container mx-auto max-w-screen-md  " id="x">
+        <div className="grid md:grid-cols-1 gap-8 font-body ">
+          {/* Development Box */}
+          <div className="flex flex-col  md:flex-row ">
+            <ServiceBox
+              title="Development"
+              description="Our meticulous attention to detail ensures that every aspect of the user journey is thoughtfully considered and optimized for maximum usability and engagement."
+              sub_description="We stay at the forefront of industry trends and emerging technologies, allowing us to create innovative solutions tailored to each client's unique requirements."
+              path="/what-we-do/development"
+              color="bg-blue-200"
+              icon={<FaDesktop className="text-5xl text-blue-500" />}
+            />
+            <div className="w-28 ">
+
             </div>
-            {/* UI and UX Box */}
-            <div className="flex flex-col w-screen/2 pl-96 md:flex-row">
-              <img src={s2} className="h-96" alt="" />
-              <ServiceBox
-                title="UI and UX"
-                description="We Create elegant and pretty UI"
-                color="bg-green-200"
-                icon={<FaPalette className="text-5xl text-green-500" />}
-                image={s2}
-              />
+            <img src={s1} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
+          </div>
+          {/* UI and UX Box */}
+          <div className="flex flex-col  md:flex-row ">
+            <img src={s2} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
+            <div className="w-28 ">
+
             </div>
+            <ServiceBox
+              title="UI and UX"
+              description="Our meticulous attention to detail ensures that every aspect of the user journey is thoughtfully considered and optimized for maximum usability and engagement."
+              sub_description="We stay at the forefront of industry trends and emerging technologies, allowing us to create innovative solutions tailored to each client's unique requirements."
+              color="bg-green-200"
+              path="/what-we-do/ui-ux"
+              icon={<FaPalette className="text-5xl text-green-500" />}
+            />
           </div>
         </div>
-      </div>
+      </div >
 
-      <div className="bg-tertiary max-h-min  py-8">
-        <div className=" mx-auto text-center mb-8">
+      <div className="bg-tertiary h-screen text-center pt-20">
+        <div className="mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold font-body">Why Nepcodes?</h2>
         </div>
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
-          <WhyUs />
-          <div className="relative pl-20">
-            <img src={growImg} className="w-80 top-0 md:w-80 " alt="" />
-          </div>
-        </div>
+        <WhyUs />
+
       </div>
+      <HeroCTA />
     </>
   );
 };
 
-const ServiceBox = ({ title, description, color, icon, image }) => {
+
+
+
+
+
+const ServiceBox = ({ title, description, sub_description, color, icon, path }) => {
   return (
-    <div
-      className={`rounded-lg p-6 shadow-md ${color} hover:shadow-lg transition duration-300 transform hover:scale-105`}
-    >
+    <div className={`rounded-lg p-4 md:p-6 w-full md:w-auto ${color} hover:shadow-lg transition duration-300 transform hover:scale-105`}>
       <div className="flex items-center mb-4">
         <div className="mr-4 p-3 rounded-full bg-white">{icon}</div>
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
       </div>
-      <p className="text-lg text-gray-700 mb-4">{description}</p>
-      <div className="text-center">
-        <Link
-          to={`/what-we-do/${title.toLowerCase()}`}
-          className="text-blue-600 hover:underline"
-        >
-          Read More
-        </Link>
+      <div>
+        <p className="text-base md:text-base text-gray-700 mb-4">{description}</p>
+        <p className="text-base md:text-base text-gray-700 mb-4">{sub_description}</p>
+        <div className="text-center md:text-left">
+          <Link to={path}>
+            <button className="text-blue-600 hover:underline" >
+              Find Out More
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

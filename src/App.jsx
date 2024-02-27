@@ -3,7 +3,7 @@ import HomePage from "./components/homePage/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/reusable/navbar";
 import About from "./components/about/about";
-import NotFound from "./components/invalidPage";
+import NotFound from "./components/reusable/invalidPage";
 import BottomNavBar from "./components/reusable/bottom-nav_bar";
 import WhatWeDo from "./components/what-we-do/whatWeDo";
 import ContactPage from "./components/contact/contact";

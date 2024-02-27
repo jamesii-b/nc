@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { CSSTransition } from "react-transition-group";
+import "./whyUs.css";
 
 function WhyUs() {
   const data = [
@@ -28,65 +30,37 @@ function WhyUs() {
       title: "Cutting-Edge Technologies",
       content: "We leverage the latest technologies to meet your needs.",
     },
-    // Add more objects to the whyUsData array as needed
   ];
 
-  const [displayIndex, setDisplayIndex] = useState(null);
+  const [displayIndex, setDisplayIndex] = useState(0); // Default to first item displayed
   const listRef = useRef(null);
 
-  const mouseEntered = (index) => {
-    setDisplayIndex(index);
-  };
-
-  const mouseLeft = () => {
-    setDisplayIndex(null);
+  const toggleContent = (index) => {
+    if (displayIndex === index) {
+      setDisplayIndex(null);
+    } else {
+      setDisplayIndex(index);
+    }
   };
 
   return (
-    <>
-      <div
-        className="space-y-4 inline-block ml-20 mt-3 min-h-screen/1.5 w-1/2 bg-gray-100 p-8 rounded-lg shadow-lg"
-        style={{ minWidth: "480px" }}
-      >
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className={`overflow-hidden ${
-              displayIndex === index ? "min-h-28" : "min-h-12"
-            }`}
-          >
-            <div
-              className="flex justify-between items-center"
-              onMouseEnter={() => mouseEntered(index)}
-              onMouseLeave={mouseLeft}
-            >
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className={`text-gray-600 transition-transform ${
-                  displayIndex === index ? "rotate-180" : ""
-                }`}
-              />
+    <div className="space-y-4 inline-block ml-20 mt-3 min-h-screen/1.5 w-1/2 p-8 relative" style={{ minWidth: "480px" }}>
+      {data.map((item, index) => (
+        <div key={index} className="border-pink-300">
+          <div className={`overflow-hidden ${index === displayIndex ? "min-h-28" : "min-h-12"}`}>
+            <div className="flex items-start" onClick={() => toggleContent(index)}>
+              <h3 className={`text-lg font-semibold border-pink-300 border-b-4 flex-grow`} style={{ marginRight: '1rem', textAlign: 'left' }}>{item.title}</h3>
+              <FontAwesomeIcon icon={faChevronDown} className={`text-gray-600 transition-transform ${index === displayIndex ? "rotate-180" : ""}`} />
             </div>
-            <div
-              className={`border-t-2 border-gray-300`}
-              style={{
-                height:
-                  displayIndex === index
-                    ? `${listRef.current.clientHeight}px`
-                    : "0px",
-                overflow: "hidden",
-                transition: "height 0.5s ease-in-out",
-              }}
-            >
-              <div ref={listRef} className="text-base py-3 text-gray-700">
+            <CSSTransition in={index === displayIndex} timeout={500} classNames="fade" unmountOnExit>
+              <div ref={listRef} className={`text-base py-3 text-gray-700 ${index === displayIndex ? "" : "block"}`}>
                 {item.content}
               </div>
-            </div>
+            </CSSTransition>
           </div>
-        ))}
-      </div>
-    </>
+        </div>
+      ))}
+    </div>
   );
 }
 
