@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import customSoftwareImage from "../../assets/custom-d.png";
-import desktopDevelopmentImage from "../../assets/desk-d.png";
-import mobileDevelopmentImage from "../../assets/mobile-d.png";
-import webDevelopmentImage from "../../assets/web-d.png";
+import customSoftwareImage from "../../../assets/custom-d.png";
+import desktopDevelopmentImage from "../../../assets/desk-d.png";
+import mobileDevelopmentImage from "../../../assets/mobile-d.png";
+import webDevelopmentImage from "../../../assets/web-d.png";
 
 const data = [
   {
