@@ -1,0 +1,13 @@
+#slider {
+    animation: 10s  slider infinite linear;
+}
+
+@keyframes slider {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
