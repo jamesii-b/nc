@@ -9,11 +9,11 @@ import WhatWeDo from "./components/what-we-do/whatWeDo";
 import ContactPage from "./components/contact/contact";
 import UiUxPage from "./components/what-we-do/UI/UX/UiUx-page";
 import DevelopmentPage from "./components/what-we-do/Development/development-page";
-import FaqPage from "./components/faq";
-import Insights from "./components/others/insights";
+import FaqPage from "./components/others/faq";
+import BlogPage from './components/others/BlogPage'
 import ScrollToTop from './ScrollTOTop'
-
-
+import APUBT from "./components/others/sub-blogs/apubt";
+import Insights from './components/others/insights'
 
 
 export default function App() {
@@ -28,7 +28,18 @@ export default function App() {
         <Route path="/what-we-do/development" element={<DevelopmentPage />} />
         <Route path="/what-we-do/ui-ux" element={<UiUxPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/insights" element={<Insights />} />
+        <Route path="/blogs" element={<BlogPage />} />
+
+        {/* 
+        BLOGS
+        START
+        */}
+        <Route path="/blogs/apubt" element={<APUBT />} />
+        <Route path="/blogs/amul" element={<Insights />} />
+        {/* 
+        BLOGS
+        END
+        */}
         <Route path="/faqs" element={<FaqPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import HeadBar from "./reusable/head-bar"
+import HeadBar from "../reusable/head-bar"
 import { IoMdCodeWorking } from "react-icons/io";
 
-import './faq.css'
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   const hasColonSeparatedItems = answer.includes(":::::");

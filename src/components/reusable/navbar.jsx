@@ -35,9 +35,9 @@ function NavBar() {
               <IoCloseSharp className="text-white text-3xl" /> : <IoMdMenu className="text-white text-3xl" />
             }
           </button>
-          <div className="hidden lg:block md:block">
-            <Link to="/" className={`text-lg font-semibold ${location.pathname === "/" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>Home</Link>
-            <Link to="/what-we-do" onMouseEnter={handleHover} onMouseLeave={handleLeave} className={`ml-4 text-lg font-semibold relative ${location.pathname.startsWith("/what-we-do") ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>
+          <div className="hidden lg:block md:block ">
+            <Link to="/" className={`text-lg font-semibold mr-10 ${location.pathname === "/" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>Home</Link>
+            <Link to="/what-we-do" onMouseEnter={handleHover} onMouseLeave={handleLeave} className={`mr-10 text-lg font-semibold relative ${location.pathname.startsWith("/what-we-do") ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>
               {showCategories && (
                 <span className="absolute top-full left-0 max-w-full lg:max-w-md -ml-4 bg-blue-100 bg-opacity-80 p-4 rounded-md">
                   <div className="w-full lg:w-96 flex">
@@ -46,10 +46,11 @@ function NavBar() {
                   </div>
                 </span>
               )}
-              What We Do?
+              Services
             </Link>
-            <Link to="/about" className={`ml-4 text-lg font-semibold ${location.pathname === "/about" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>About</Link>
-            <Link to="/faqs" className={`ml-4 text-lg font-semibold ${location.pathname === "/faqs" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>FAQs</Link>
+            <Link to="/about" className={`mr-10 text-lg font-semibold ${location.pathname === "/about" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>About</Link>
+            <Link to="/blogs" className={`mr-10 text-lg font-semibold ${location.pathname === "/blogs" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>Blogs</Link>
+            <Link to="/faqs" className={`mr-10 text-lg font-semibold ${location.pathname === "/faqs" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>FAQs</Link>
           </div>
         </div>
         <div className="hidden lg:block md:block">
@@ -64,7 +65,7 @@ function NavBar() {
               <hr className="border-blue-200 my-2" />
               <div className="flex flex-col">
                 <div className="flex items-center">
-                  <Link to="/what-we-do" className="text-lg font-semibold py-1 px-4 rounded-md ">What We Do?</Link>
+                  <Link to="/what-we-do" className="text-lg font-semibold py-1 px-4 rounded-md ">Services</Link>
                   <FaAngleDown className="text-2xl ml-2" />
                 </div>
                 <div className="pl-8">
@@ -74,6 +75,7 @@ function NavBar() {
               </div>
               <hr className="border-blue-200 my-2" />
               <Link to="/about" className="text-lg font-semibold py-1 px-4 rounded-md ">About</Link>
+              <Link to="/blog" className="text-lg font-semibold py-1 px-4 rounded-md ">Blogs</Link>
               <Link to="/faqs" className="text-lg font-semibold py-1 px-4 rounded-md ">FAQs</Link>
               <hr className="border-blue-200 my-2" />
               <Link to="/contact">
@@ -81,8 +83,6 @@ function NavBar() {
               </Link>
             </div>
           </div>
-
-
         )
       }
     </nav >

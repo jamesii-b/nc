@@ -40,8 +40,8 @@ function BottomNavBar() {
 
           </li>
           <li className="mb-1 md:mb-2">
-            <Link to='/insights'>
-              Insights
+            <Link to='/blogs'>
+              Blogs
             </Link>
           </li>
         </ul>
