@@ -1,5 +1,5 @@
 import React from "react";
-import HomePage from "./components/homePage/home";
+import HomePage from "./components/home/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/reusable/navbar";
 import About from "./components/about/about";
@@ -10,6 +10,7 @@ import ContactPage from "./components/contact/contact";
 import UiUxPage from "./components/what-we-do/UI/UX/UiUx-page";
 import DevelopmentPage from "./components/what-we-do/Development/development-page";
 import FaqPage from "./components/faq";
+import Insights from "./components/others/insights";
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/what-we-do/development" element={<DevelopmentPage />} />
         <Route path="/what-we-do/ui-ux" element={<UiUxPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/insights" element={<Insights />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

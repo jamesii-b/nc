@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { FaDesktop, FaPalette } from "react-icons/fa";
 import whatwedo01 from "../../assets/whatwedo01.png";
 import HeadBar from "../reusable/head-bar";
-import HeroCTA from "../homePage/components/HeroCTA";
+import HeroCTA from "../home/components/HeroCTA";
 const WhatWeDo = () => {
   return (
     <>
