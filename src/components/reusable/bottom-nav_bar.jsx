@@ -32,7 +32,7 @@ function BottomNavBar() {
         <ul className="list-none mt-3">
           <li className="mb-1 md:mb-2">
             <Link
-              to="/faq"
+              to="/faqs"
             >
               FAQ
 

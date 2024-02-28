@@ -11,10 +11,16 @@ import UiUxPage from "./components/what-we-do/UI/UX/UiUx-page";
 import DevelopmentPage from "./components/what-we-do/Development/development-page";
 import FaqPage from "./components/faq";
 import Insights from "./components/others/insights";
+import ScrollToTop from './ScrollTOTop'
+
+
+
+
 export default function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
@@ -23,7 +29,7 @@ export default function App() {
         <Route path="/what-we-do/ui-ux" element={<UiUxPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/insights" element={<Insights />} />
-        <Route path="/faq" element={<FaqPage />} />
+        <Route path="/faqs" element={<FaqPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BottomNavBar />

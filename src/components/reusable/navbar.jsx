@@ -49,6 +49,7 @@ function NavBar() {
               What We Do?
             </Link>
             <Link to="/about" className={`ml-4 text-lg font-semibold ${location.pathname === "/about" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>About</Link>
+            <Link to="/faqs" className={`ml-4 text-lg font-semibold ${location.pathname === "/faqs" ? "text-blue-300 overline leading-loose" : "hover:text-blue-300"}`}>FAQs</Link>
           </div>
         </div>
         <div className="hidden lg:block md:block">
@@ -73,6 +74,7 @@ function NavBar() {
               </div>
               <hr className="border-blue-200 my-2" />
               <Link to="/about" className="text-lg font-semibold py-1 px-4 rounded-md ">About</Link>
+              <Link to="/faqs" className="text-lg font-semibold py-1 px-4 rounded-md ">FAQs</Link>
               <hr className="border-blue-200 my-2" />
               <Link to="/contact">
                 <button className="bg-blue-400 text-gray-800 py-2 px-4 rounded-md ">Work With Us</button>

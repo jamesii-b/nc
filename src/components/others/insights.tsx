@@ -1,6 +1,5 @@
 import React from 'react';
 import HeadBar from "../reusable/head-bar"
-import './insights.css'
 const Insights = () => {
   return (
     <div className=' w-full h-full font-serif'>
