@@ -1,28 +1,24 @@
 import React from "react";
-// import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function BottomNavBar() {
-  // const history = useHistory();
-
-  // const handleGetProposal = () => {
-  //   // Handle logic for getting proposal
-  //   // For example, navigate to a specific route
-  //   history.push("/get-proposal");
-  // };
-
   return (
     <div className="bg-sub_color min-h-max h-auto w-full z-50 bg-black text-white grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4 md:px-10 py-6 md:py-10">
       <div className="flex flex-col items-center md:items-start">
-        <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">Nepcodes</div>
+        <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">
+          <Link to="/">
+
+            Nepcodes
+          </Link>
+        </div>
         <div className="mb-2 md:mb-4 text-sm md:text-base text-gray-300">Your IT Companion.</div>
       </div>
       <div className="flex flex-col items-center md:items-start">
         <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">About Company</div>
         <ul className="list-none">
-          <li className="mb-1 md:mb-2">About</li>
-          <li className="mb-1 md:mb-2">Services</li>
-          <li className="mb-1 md:mb-2">Work</li>
-          <li className="mb-1 md:mb-2">Team</li>
+          <li className="mb-1 md:mb-2"><Link to="/about"> About</Link></li>
+          <li className="mb-1 md:mb-2"><Link to="/services"> Services</Link></li>
+          <li className="mb-1 md:mb-2"><Link to="/what-we-do"> Work</Link></li>
         </ul>
       </div>
       <div className="flex flex-col items-center md:items-start">
@@ -34,7 +30,20 @@ function BottomNavBar() {
           </button>
         </div>
         <ul className="list-none mt-3">
-          <li className="mb-1 md:mb-2">FAQ</li>
+          <li className="mb-1 md:mb-2">
+            <Link
+              to="/faq"
+            >
+              FAQ
+
+            </Link>
+
+          </li>
+          <li className="mb-1 md:mb-2">
+            <Link to='/insights'>
+              Insights
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
