@@ -41,8 +41,8 @@ function NavBar() {
               {showCategories && (
                 <span className="absolute top-full left-0 max-w-full lg:max-w-md -ml-4 bg-blue-100 bg-opacity-80 p-4 rounded-md">
                   <div className="w-full lg:w-96 flex">
-                    <Link to="/what-we-do/development" className="text-lg mr-6 font-semibold block mb-4 pr-6 border-r-2   border-gray-600">Development<div className="text-sm text-black mt-2">We provide web development services that are scalable, secure, and reliable.</div></Link>
-                    <Link to="/what-we-do/ui-ux" className="text-lg font-semibold block">UI/UX Design<div className="text-sm text-black mt-2">We design user-friendly, intuitive, and visually appealing interfaces that enhance user experience.</div></Link>
+                    <Link to="/services/development" className="text-lg mr-6 font-semibold block mb-4 pr-6 border-r-2   border-gray-600">Development<div className="text-sm text-black mt-2">We provide web development services that are scalable, secure, and reliable.</div></Link>
+                    <Link to="/services/ui-ux" className="text-lg font-semibold block">UI/UX Design<div className="text-sm text-black mt-2">We design user-friendly, intuitive, and visually appealing interfaces that enhance user experience.</div></Link>
                   </div>
                 </span>
               )}
@@ -69,8 +69,8 @@ function NavBar() {
                   <FaAngleDown className="text-2xl ml-2" />
                 </div>
                 <div className="pl-8">
-                  <Link to="/what-we-do/development" className="text-lg font-semibold block py-1 px-4 rounded-md hover:bg-blue-200">Web Development</Link>
-                  <Link to="/what-we-do/ui-ux" className="text-lg font-semibold block py-1 px-4 rounded-md ">UI/UX Design</Link>
+                  <Link to="/services/development" className="text-lg font-semibold block py-1 px-4 rounded-md hover:bg-blue-200">Web Development</Link>
+                  <Link to="/services/ui-ux" className="text-lg font-semibold block py-1 px-4 rounded-md ">UI/UX Design</Link>
                 </div>
               </div>
               <hr className="border-blue-200 my-2" />

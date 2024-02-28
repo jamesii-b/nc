@@ -25,13 +25,7 @@ const blogDatum: BlogPreview[] = [
         image: "/others/aws.webp",
         url: "/blogs/aws"
     },
-    {
-        title: "The Future of Work: Enabling Remote Collaboration and Productivity with Microsoft Teams",
-        sub_title: `
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates error blanditiis recusandae provident! Ex, repellat.`,
-        image: "/others/office.jpg",
-        url: "/blogs/work-future"
-    }
+    
 ];
 
 function BlogPage() {

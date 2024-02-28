@@ -2,7 +2,6 @@ import React from "react";
 import techStack from "../../assets/tech-stacks.png";
 import s1 from "../../assets/s1.png";
 import s2 from "../../assets/s2.png";
-import growImg from "../../assets/growth.png";
 import WhyUs from "../whyUs";
 import { Link } from "react-router-dom";
 import { FaDesktop, FaPalette } from "react-icons/fa";
