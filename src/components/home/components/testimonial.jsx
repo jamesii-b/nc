@@ -12,9 +12,9 @@ const testimonial = {
 
 function TestimonialSection() {
   return (
-    <section className="py-4 ">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center bg-white rounded-lg shadow-lg p-8">
+    <section className="py-4  ">
+      <div className="container mx-auto px-4 ">
+        <div className="max-w-3xl mx-auto text-center bg- bg-bg_secondary rounded-lg shadow-lg p-8">
           <FaQuoteLeft className="text-3xl text-blue-500 mb-4 mx-auto" />
           <p className="text-lg text-gray-800 leading-relaxed mb-6">{testimonial.quote}</p>
           <div className="flex flex-col items-center">

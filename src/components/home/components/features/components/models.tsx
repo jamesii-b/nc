@@ -14,7 +14,7 @@ const sections:Section[] = [
   },
   { 
     title: "Security First Approach",
-    text: "Security is not just a feature; it's at the core of everything we do. We implement stringent security measures to safeguard your data and assets, ensuring peace of mind throughout our partnership.",
+    text: "Security is not just a feature; it's at the core of everything we do. We take Security by Heart. We implement stringent security measures to safeguard your data and assets, ensuring peace of mind throughout our partnership while following best industry standard practice and compliance like GDPR, HIPAA, and more.",
     image:"i-2.png",
     reverse: false 
   },

@@ -19,6 +19,7 @@
     "@heroicons/react": "^2.1.1",
     "framer-motion": "^11.0.6",
     "ifvisible": "^1.1.0",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-countdown-circle-timer": "^3.2.1",
     "react-dom": "^18.2.0",

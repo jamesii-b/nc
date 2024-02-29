@@ -5,7 +5,7 @@ import FeatureSection from "./components/features/features";
 import SkillSection from "./components/skillSection";
 import VisualSection from "./components/visionSection";
 import AndMore from "./components/andmore";
-import HeroCTA from "./components/HeroCTA";
+import HeroCTA from "../reusable/HeroCTA";
 import CaseStudySection from "./components/caseStudy";
 function HomePage() {
 

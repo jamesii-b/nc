@@ -1,7 +1,6 @@
-
 import { motion, useInView, useAnimation } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
-
+import { Link } from 'react-router-dom';
 function HeroCTA() {
     const refer = useRef(null);
     const inView = useInView(refer, { once: false });
@@ -49,8 +48,10 @@ function HeroCTA() {
               transition={{ duration: 0.6, delay: 0.9, ease: 'easeInOut' }}
               className="flex justify-center md:justify-start"
             >
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                Get Started
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 ease-in-out">
+               <Link to="/contact">
+               Get Started
+               </Link> 
               </button>
             </motion.div>
           </div>
