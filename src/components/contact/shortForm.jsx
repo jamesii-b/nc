@@ -22,7 +22,7 @@ const ShortForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="md:w-full max-w-md mx-auto"> {/* Adjusted to match width */}
       <p className="text-lg font-bold mb-2">Hate Forms?</p>
       <p className="text-base font-semibold mb-2">Drop your Email or Number. Our team will reach out to you.</p>
       <div className="flex mb-4">
@@ -33,7 +33,7 @@ const ShortForm = () => {
         >
           Email
           {selectedOption === 'email' && (
-            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-green-500" />
+            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-black-500" />
           )}
         </button>
         <button
@@ -43,7 +43,7 @@ const ShortForm = () => {
         >
           Mobile
           {selectedOption === 'mobile' && (
-            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-green-500" />
+            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-black-500" />
           )}
         </button>
       </div>
@@ -56,9 +56,9 @@ const ShortForm = () => {
           onChange={handleInputChange} />
       )}
       {selectedOption === 'mobile' && (
-        <div className="relative mb-4">
+        <div className="flex mb-4 w-full">
           <select
-            className="border border-gray-300 rounded-l px-4 py-2 focus:outline-none"
+            className="border border-gray-300 rounded-l  py-2 focus:outline-none"
             value={countryCode}
             onChange={handleCountryCodeChange}
           >

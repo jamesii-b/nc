@@ -10,26 +10,23 @@ function ContactPage() {
     name: "",
     email: "",
     companyName: "",
-    message: "",
+    details: "",
     service: "",
   });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setErrors({ ...errors, [name]: '' });
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
-    console.log("submitting form");
     e.preventDefault();
     const errors = {};
 
     // Check if name is empty
     if (!formData.name.trim()) {
-      console.log(
-        "no name \n \n \n"
-      )
       errors.name = "Name is required";
     }
 
@@ -42,104 +39,116 @@ function ContactPage() {
 
     // Check if company name is empty
     if (!formData.companyName.trim()) {
-      errors.companyName = "Company Name is required";
+      errors.companyName = "Please Enter your Company Name";
     }
 
-    // Check if message is empty
-    if (!formData.message.trim()) {
-      errors.message = "Message is required";
+    // Check if details is empty
+    if (!formData.details.trim()) {
+      errors.details = "Please Enter your Details";
     }
 
     // Check if service is empty
     if (!formData.service) {
-      errors.service = "Service selection is required";
+      errors.service = "Please select a service";
     }
 
     // Set errors if any
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
       return;
+    } else {
+      // If no errors, proceed with form submission logic
+      console.log(formData);
     }
-
-    // If no errors, proceed with form submission logic
-    console.log(formData);
   };
 
   return (
-    <div className="min-h-screen md:flex lg:flex justify-center items-center">
-      <ShortForm />
-      <div className="max-w-md my-32 sm:mx-auto w-full bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl mb-4">Contact Us</h2>
-        <form onSubmit={handleSubmit}>
-          <TextInput
-            id="name"
-            name="name"
-            label="Name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            required
-            error={errors.name}
-          />
+    <div>
+      <div className="md:min-h-screen md:flex md:my-20 py-32 md:px-40 md:w-fit mx-auto lg:flex justify-center items-center">
+        <div className="w-full md:mr-20 " id="left-menu">
+          <div className="hidden lg:block">
+            <img
+              src="/contact/contact.png"
+              className=""
+              alt=""
+            />
+          </div>
 
-          <TextInput
-            id="email"
-            name="email"
-            label="Email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-            error={errors.email}
-          />
+          <ShortForm />
+        </div>
 
-          <TextInput
-            id="companyName"
-            name="companyName"
-            label="Company Name"
-            value={formData.companyName}
-            onChange={handleChange}
-            placeholder="Enter your company name"
-            required
-            error={errors.companyName}
-          />
-          <SelectInput
-            id="service"
-            name="service"
-            label="Service"
-            value={formData.service}
-            onChange={handleChange}
-            options={[
-              { value: "Consulting", label: "Consulting" },
-              { value: "Development", label: "Development" },
-              { value: "ERP", label: "ERP" },
-              { value: "CRM", label: "CRM" },
-              { value: "Upgrade", label: "Upgrade existing application" }
-            ]}
-            placeholder="Select a service"
-            required
-            error={errors.service}
-          />
-          <TextAreaInput
-            id="message"
-            name="message"
-            label="Message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter your message"
-            required
-            error={errors.message}
-          />
+        <div
+          id="right-menu"
+          className="bg-bg_secondary max-w-md my-32 sm:mx-auto w-full  p-8 rounded-lg shadow-md"
+        >
+          <h2 className="text-2xl mb-4">Contact Us</h2>
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              id="name"
+              name="name"
+              label="Name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+              error={errors.name}
+            />
+            <TextInput
+              id="email"
+              name="email"
+              label="Email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+              error={errors.email}
+            />
 
+            <TextInput
+              id="companyName"
+              name="companyName"
+              label="Company Name"
+              value={formData.companyName}
+              onChange={handleChange}
+              placeholder="Enter your company name"
+              required
+              error={errors.companyName}
+            />
+            <SelectInput
+              id="service"
+              name="service"
+              label="Service"
+              value={formData.service}
+              onChange={handleChange}
+              options={[
+                { value: "Consulting", label: "Consulting" },
+                { value: "Development", label: "Development" },
+                { value: "ERP", label: "ERP" },
+                { value: "CRM", label: "CRM" },
+                { value: "Upgrade", label: "Upgrade existing application" },
+              ]}
+              placeholder="Select a service"
+              error={errors.service}
+            />
+            <TextAreaInput
+              id="details"
+              name="details"
+              label="Details"
+              value={formData.details}
+              onChange={handleChange}
+              placeholder="Enter your details"
+              required
+              error={errors.details}
+            />
 
-
-          <button
-            type="submit"
-            className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
-          >
-            Submit
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

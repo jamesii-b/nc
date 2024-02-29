@@ -1,6 +1,6 @@
 import React from "react";
 
-const SelectInput = ({ id, name, label, value, onChange, options, placeholder, required, error }) => {
+const SelectInput = ({ id, name, label, value, onChange, options, placeholder, error }) => {
   return (
     <div className="mb-4">
       <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
@@ -12,7 +12,6 @@ const SelectInput = ({ id, name, label, value, onChange, options, placeholder, r
         value={value}
         onChange={onChange}
         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-        required={required}
       >
         <option value="" disabled>{placeholder}</option>
         {options.map(option => (
