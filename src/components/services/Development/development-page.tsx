@@ -52,7 +52,7 @@ function DevelopmentPage() {
         <div className="md:w-2/3 md:mr-5 p-5">
           <div className="text-4xl font-body text-blue-700 mb-5">Development</div>
           <div className="font-body text-base text-gray-800 leading-relaxed text-justify">
-            Our mission is to build digital products that last. By being pragmatic product experts with a narrow tech specialization, we're able to avoid surprises and deliver highest quality software consistently. Since 2015, we have successfully completed 80+ web, mobile and desktop projects in fintech, education, healthcare and other industries, working with brands like National Geographic, Beam or Paradox Interactive. Our approach is simple: build partnerships with our clients where we work together towards an optimal solution for their business.
+            Our mission is to build digital products that last. By being pragmatic product experts with a narrow tech specialization, we're able to avoid surprises and deliver highest quality software consistently. Since 2020, we have successfully completed numerous web, mobile and desktop projects in education, and other industries, working with acdemic institutions and more. Our approach is simple: build partnerships with our clients where we work together towards an optimal solution for their business.
           </div>
         </div>
       </div>
