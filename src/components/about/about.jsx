@@ -1,11 +1,15 @@
 import React from "react";
-import CenterDiv from "../reusable/centerDiv";
+import CenterBOX from "../reusable/centerBOX";
 import about1 from "../../assets/about1.png";
 import about2 from "../../assets/about2.png";
 import about3 from "../../assets/about3.png";
 import "./styleSheet.css";
 import about01 from "../../assets/about01.jpg";
 import Testimonial from "../reusable/testimonial";
+import HeroCTA from '../../components/reusable/HeroCTA';
+import HeadBar from "../reusable/head-bar";
+
+
 const aboutUsSections = [
   {
     title: "Empowering Tomorrow",
@@ -19,39 +23,36 @@ const aboutUsSections = [
     subtitle: "Setting the Bar High in IT Outsourcing",
     content:
       "Despite being newly established, we set high standards for ourselves. Our focus on excellence, agility, and client value propels us to redefine the landscape of IT outsourcing, ensuring exceptional service from day one.",
-    image: about2,
+    image: about3,
   },
   {
     title: "Ambitious Goals, Bright Future",
     subtitle: "Driving Impact and Value Creation",
     content:
       "Our journey may be young, but our goals are ambitious. By prioritizing global impact and delivering outstanding value, we aspire to become leaders in the industry, setting the stage for a global innovators.",
-    image: about3,
+    image: about2,
   },
 ];
 
-import HeadBar from "../reusable/head-bar";
 
 function About() {
   return (
     <>
       <HeadBar title="About Us" imageSrc={about01} backgroundColor="bg-primary" />
-      <div className="bg-black h-20 "></div>
-      <div className="bg-black relative  py-5">
-        <div className="mb-10">
-          {aboutUsSections.map((section, index) => (
-            <CenterDiv
-              key={index} // Add key prop for each child component
-              title={section.title}
-              sub_title={section.subtitle}
-              content={section.content}
-              image={section.image}
-            />
-          ))}
-        </div>
-        <div className="h-3"></div>
+      <div className="flex flex-col items-center my-20">
+        {aboutUsSections.map((section, index) => (
+          < CenterBOX
+            key={index}
+            title={section.title}
+            subtitle={section.subtitle}
+            content={section.content}
+            image={section.image}
+            imgLeft={index % 2 === 0}
+          />
+        ))}
       </div>
       <Testimonial />
+      <HeroCTA />
     </>
   );
 }
