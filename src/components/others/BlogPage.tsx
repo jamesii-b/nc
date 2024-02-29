@@ -15,14 +15,14 @@ const blogDatum: BlogPreview[] = [
         title: "Navigating the Pandemic: The Resilient Journey of Amul with Technology",
         sub_title: `
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates error blanditiis recusandae provident! Ex, repellat.`,
-        image: "/others/amul.webp",
+        image: "/misc/amul.webp",
         url: "/blogs/amul"
     },
     {
         title: "Mastering Cost Efficiency: Strategies for Optimizing Spending in AWS Without Compromising Performance",
         sub_title:
             ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates error blanditiis recusandae provident! Ex, repellat.`,
-        image: "/others/aws.webp",
+        image: "/misc/aws.webp",
         url: "/blogs/aws"
     },
     
@@ -38,7 +38,7 @@ function BlogPage() {
     return (
         <div>
             {/* Header component */}
-            <HeadBar backgroundColor="bg-primary" imageSrc="/others/h1.webp" title="Blogs" />
+            <HeadBar backgroundColor="bg-primary" imageSrc="/misc/blog01.webp" title="Blogs" />
             <div className='my-20'>
 
                 <h1 className='font-bold text-center font-body text-3xl'>
@@ -51,7 +51,7 @@ function BlogPage() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="md:w-1/2"
                     >
-                        <img src="case-study.jpg" alt="Case Study Left" className="w-full rounded-lg shadow-md" />
+                        <img src="/misc/case-study.webp" alt="Case Study Left" className="w-full rounded-lg shadow-md" />
                     </motion.div>
                     <div className="md:w-1/2 md:pl-8"> {/* Right Column */}
                         <div className="text-center md:text-left"> {/* Text Container */}

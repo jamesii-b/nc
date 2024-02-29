@@ -63,8 +63,8 @@ function ContactPage() {
   };
 
   return (
-    <div>
-      <div className="md:min-h-screen md:flex md:my-20 py-32 md:px-40 md:w-fit mx-auto lg:flex justify-center items-center">
+    <div className="bg-gray-400 ">
+      <div className="md:min-h-screen md:flex py-32 md:px-40 md:w-fit mx-auto lg:flex justify-center items-center">
         <div className="w-full md:mr-20 " id="left-menu">
           <div className="hidden lg:block">
             <img

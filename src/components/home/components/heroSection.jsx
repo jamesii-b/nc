@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaAngleDown } from "react-icons/fa";
-import img01 from "../../../assets/img-main.jpg";
+import img01 from "/public/hero/img-main.webp";
 import { Link } from "react-router-dom";
 
 

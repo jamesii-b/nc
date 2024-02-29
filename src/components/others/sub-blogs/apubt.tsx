@@ -7,7 +7,7 @@ const APUBT = () => {
 
     return (
         <div>
-            <HeadBar imageSrc="/public/others/h1.webp" title="Blogs" backgroundColor="bg-primary" />
+            <HeadBar imageSrc="/misc/blog01.webp" title="Blogs" backgroundColor="bg-primary" />
             <BlogPost
 
                 backgroundText="

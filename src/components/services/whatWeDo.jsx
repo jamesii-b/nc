@@ -1,20 +1,20 @@
 import React from "react";
-import techStack from "../../assets/tech-stacks.png";
-import s1 from "../../assets/s1.png";
-import s2 from "../../assets/s2.png";
+import techStack from "/services/tech-stacks.webp";
+import s1 from "/services/s1.webp";
+import s2 from "/services/s2.webp";
 import WhyUs from "../whyUs";
 import { Link } from "react-router-dom";
 import { FaDesktop, FaPalette } from "react-icons/fa";
-import whatwedo01 from "../../assets/whatwedo01.png";
 import HeadBar from "../reusable/head-bar";
 import HeroCTA from "../reusable/HeroCTA";
+
 const WhatWeDo = () => {
   return (
     <>
-      <HeadBar title="What We Do" imageSrc={whatwedo01} backgroundColor="bg-primary" />
-      <div className="container mx-auto py-20 px-24">
+      <HeadBar title="What We Do" imageSrc="/services/01.png" backgroundColor="bg-primary" />
+      <div className="container mx-auto py-20 px-6 sm:px-24"> {/* Adjust padding for small screens */}
         <div className="flex flex-col md:flex-row items-center mb-8">
-          <div className="w-full md:w-1/2 mb-4 md:mb-0 pr-8">
+          <div className="w-full md:w-1/2 mb-4 md:mb-0 pr-4 md:pr-8"> {/* Adjust padding for small screens */}
             <h1 className="text-4xl font-bold mb-4 text-gray-800">
               What We Do
             </h1>
@@ -42,57 +42,47 @@ const WhatWeDo = () => {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-screen-md  " id="x">
+      <div className="container mx-auto max-w-screen-md" id="x"> {/* Remove unnecessary whitespace */}
         <div className="grid md:grid-cols-1 gap-8 font-body ">
           {/* Development Box */}
-          <div className="flex flex-col  md:flex-row ">
+          <div className="flex flex-col md:flex-row ">
             <ServiceBox
               title="Development"
               description="Our meticulous attention to detail ensures that every aspect of the user journey is thoughtfully considered and optimized for maximum usability and engagement."
               sub_description="We stay at the forefront of industry trends and emerging technologies, allowing us to create innovative solutions tailored to each client's unique requirements."
-              path="/what-we-do/development"
+              path="/services/development"
               color="bg-blue-200"
               icon={<FaDesktop className="text-5xl text-blue-500" />}
             />
-            <div className="w-28 ">
-
-            </div>
+            <div className="w-0 md:w-8"></div> {/* Adjust spacing */}
             <img src={s1} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
           </div>
           {/* UI and UX Box */}
-          <div className="flex flex-col  md:flex-row ">
+          <div className="flex flex-col md:flex-row ">
             <img src={s2} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
-            <div className="w-28 ">
-
-            </div>
+            <div className="w-0 md:w-8"></div> {/* Adjust spacing */}
             <ServiceBox
               title="UI and UX"
               description="Our meticulous attention to detail ensures that every aspect of the user journey is thoughtfully considered and optimized for maximum usability and engagement."
               sub_description="We stay at the forefront of industry trends and emerging technologies, allowing us to create innovative solutions tailored to each client's unique requirements."
               color="bg-green-200"
-              path="/what-we-do/ui-ux"
+              path="/services/ui-ux"
               icon={<FaPalette className="text-5xl text-green-500" />}
             />
           </div>
         </div>
       </div >
 
-      <div className="bg-tertiary h-screen text-center pt-20">
+      <div className="bg-tertiary h-screen mx-auto text-center pt-20">
         <div className="mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold font-body">Why Nepcodes?</h2>
         </div>
         <WhyUs />
-
       </div>
       <HeroCTA />
     </>
   );
 };
-
-
-
-
-
 
 const ServiceBox = ({ title, description, sub_description, color, icon, path }) => {
   return (

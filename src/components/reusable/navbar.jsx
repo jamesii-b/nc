@@ -27,7 +27,7 @@ function NavBar() {
   const handleLeave = () => setShowCategories(false);
 
   return (
-    <nav className={`fixed w-full text-secondary_text z-50 text-xl h-20 top-0 ${scrolled ? "bg-secondary" : "bg-transparent"}`}>
+    <nav className={`fixed w-full text-secondary_text z-50 text-xl h-20  top-0 ${scrolled ? "lg:bg-secondary md:bg-secondary bg-transparent" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center text-t_secondary">
         <div className="px-8 space-x-8">
           <button className="lg:hidden md:hidden text-2xl text-blue-300 focus:outline-none" onClick={toggleMenu}>
@@ -69,7 +69,7 @@ function NavBar() {
                   <FaAngleDown className="text-2xl ml-2" />
                 </div>
                 <div className="pl-8">
-                  <Link to="/services/development" className="  block py-1 px-4 rounded-md">Web Development</Link>
+                  <Link to="/services/development" className="  block py-1 px-4 rounded-md">Development</Link>
                   <Link to="/services/ui-ux" className="  block py-1 px-4 rounded-md ">UI/UX Design</Link>
                 </div>
               </div>

@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import ContentBox from "./box";
 import HeadBar from "../../reusable/head-bar";
-const path = "/development-page";
+const path = "/services/dev/stack";
 import HeroCTA from "../../reusable/HeroCTA"
 import Works from "./works";
 import './development.css'
 
 const techStacks = [
-  { src: `${path}/aws.png`, alt: "AWS" },
-  { src: `${path}/azure.png`, alt: "Azure" },
-  { src: `${path}/electron.png`, alt: "Electron" },
-  { src: `${path}/flutter.png`, alt: "Flutter" },
-  { src: `${path}/nodejs.png`, alt: "Node.js" },
-  { src: `${path}/reactjs.png`, alt: "React.js" },
-  { src: `${path}/next.png`, alt: "Next.js" },
-  { src: `${path}/docker.png`, alt: "Docker" },
-  { src: `${path}/kube.png`, alt: "Kubernetes" },
-  { src: `${path}/nginx.png`, alt: "Nginx" },
-  { src: `${path}/tailwind.png`, alt: "Tailwind" },
-  { src: `${path}/ts.png`, alt: "TypeScript" },
+  { src: `${path}/aws.webp`, alt: "AWS" },
+  { src: `${path}/azure.webp`, alt: "Azure" },
+  { src: `${path}/electron.webp`, alt: "Electron" },
+  { src: `${path}/flutter.webp`, alt: "Flutter" },
+  { src: `${path}/nodejs.webp`, alt: "Node.js" },
+  { src: `${path}/reactjs.webp`, alt: "React.js" },
+  { src: `${path}/next.webp`, alt: "Next.js" },
+  { src: `${path}/docker.webp`, alt: "Docker" },
+  { src: `${path}/kube.webp`, alt: "Kubernetes" },
+  { src: `${path}/nginx.webp`, alt: "Nginx" },
+  { src: `${path}/tailwind.webp`, alt: "Tailwind" },
+  { src: `${path}/ts.webp`, alt: "TypeScript" },
 
 ];
 
@@ -46,9 +46,9 @@ function DevelopmentPage() {
 
   return (
     <div>
-      <HeadBar title="Development" imageSrc="/development-page/h1.png" backgroundColor="bg-primary" />
+      <HeadBar title="Development" imageSrc="/services/dev/h1.webp" backgroundColor="bg-primary" />
       <div className="p-5 md:flex md:items-center md:justify-between md:mx-auto md:max-w-4xl md:my-20 my-10 ">
-        <img src="/s1.png" className="w-full max-h-60 md:mr-5 h-auto md:inset-0 md:max-w-64  md:min-h-52 md:h-auto md:max-h-80 md:ml-5 object-cover rounded-lg md:rounded-none" alt="Header Image" />
+        <img src="/services/s1.webp" className="w-full max-h-60 md:mr-5 h-auto md:inset-0 md:max-w-64  md:min-h-52 md:h-auto md:max-h-80 md:ml-5 object-cover rounded-lg md:rounded-none" alt="Header Image" />
         <div className="md:w-2/3 md:mr-5 p-5">
           <div className="text-4xl font-body text-blue-700 mb-5">Development</div>
           <div className="font-body text-base text-gray-800 leading-relaxed text-justify">

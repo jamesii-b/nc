@@ -12,8 +12,9 @@ import DevelopmentPage from "./components/services/Development/development-page"
 import FaqPage from "./components/others/faq";
 import BlogPage from './components/others/BlogPage'
 import ScrollToTop from './ScrollTOTop'
-import APUBT from "./components/others/sub-blogs/apubt";
-import Insights from './components/others/insights'
+import AMUL from "./components/others/sub-blogs/amul";
+
+import MaintenancePage from './components/reusable/maintenance'
 
 export default function App() {
   return (
@@ -33,13 +34,12 @@ export default function App() {
           <Route path="/what-we-do" element={<Navigate to="/services" />} />
           <Route path="/service" element={<Navigate to="/services" />} />
           {/*  BLOGS START */}
-
-          
-          <Route path="/blogs/apubt" element={<APUBT />} />
-          <Route path="/blogs/amul" element={<Insights />} />
+          <Route path="/blogs/amul" element={<AMUL />} />
+          <Route path="/blogs/apubt" element={<MaintenancePage />} />
+          <Route path="/blogs/aws" element={<MaintenancePage />} />
           {/* BLOGSEND*/}
 
-          
+
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

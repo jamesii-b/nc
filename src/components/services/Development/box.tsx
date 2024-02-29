@@ -8,21 +8,21 @@ const contentData = [
       ` We understand that your business is unique, and so are your requirements.Our approach to custom software development ensures that every solution we deliver is tailor- made to fit your specific needs, offering unparalleled functionality and efficiency.From conceptualization to implementation, we have the skills and knowledge to handle even the most complex projects with ease. 
       From initial consultations to regular progress updates, you can trust us to keep you informed and involved throughout the development process.
       `,
-    image: '/i-1.png',
+    image: '/services/custom.webp',
   },
   {
     id: 2,
     title: 'App Development',
     description:
       ` Whether you need an iOS, Android, or cross-platform app, our team has the expertise and experience to deliver exceptional results. From native to hybrid development, we leverage the latest tools and technologies to ensure that your app performs flawlessly on any device. A great app is not just about functionality; it's also about the user experience. Our design philosophy revolves around creating intuitive interfaces and engaging experiences that keep users coming back for more, ultimately driving customer satisfaction and loyalty.`,
-    image: '/i-2.png',
+    image: '/services/mobile.webp',
   },
   {
     id: 3,
     title: 'Web Development',
     description:
       `We understand that your website is often the first point of contact between your business and potential customers.That's why we tailor our web development services to reflect your brand identity, values, and goals, ensuring a unique and memorable online experience for your visitors.Our commitment to responsive design ensures that your website will adapt seamlessly to desktops, laptops, tablets, and smartphones, providing an optimal user experience every time.`,
-    image: '/i-3.png',
+    image: '/services/web.webp',
   },
 ];
 
@@ -54,12 +54,12 @@ function ContentBox() {
   };
 
   return (
-    <div className="my-10">
-      <div className="bg-inherit flex justify-center md:justify-between px-5 md:px-20 ">
+    <div className="hidden md:block lg:block ">
+      <div className="bg-inherit flex flex-wrap justify-center md:justify-between px-5 md:px-20 overflow-x-auto">
         {contentData.map((item) => (
           <div
             key={item.id}
-            className={`cursor-pointer text-lg font-semibold mx-28 my-2 md:my-0 p-3 ${selectedSection === item.title ? 'bg-black text-white' : 'text-gray-800 hover:bg-gray-300'
+            className={`cursor-pointer text-lg font-semibold mx-2 my-2 md:my-0 p-3 ${selectedSection === item.title ? 'bg-black text-white' : 'text-gray-800 hover:bg-gray-300'
               }`}
             onClick={() => handleSectionClick(item.title)}
           >
@@ -67,7 +67,7 @@ function ContentBox() {
           </div>
         ))}
       </div>
-      <div className="bg-gray-100  md:min-h-screen md:mb-10">{renderContent()}</div>
+      <div className="bg-gray-100   md:mb-10 overflow-x-auto">{renderContent()}</div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa";
-import testimonialImg from "../../../assets/testimonials/h1.png"; // Import the image of the testimonial giver
+import testimonialImg from "/hero/h1.webp"; // Import the image of the testimonial giver
 
 // Sample testimonial data
 const testimonial = {

@@ -55,7 +55,7 @@ const FaqItem = ({ question, answer }) => {
 function FaqPage() {
   return (
     <>
-      <HeadBar backgroundColor="bg-primary" imageSrc="/faq/h1.webp" title="FAQs" />
+      <HeadBar backgroundColor="bg-primary" imageSrc="/misc/faq01.webp" title="FAQs" />
       <div className="container mx-auto py-8 min-h-screen">
 
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-500">

@@ -6,7 +6,7 @@ function CaseStudySection() {
   const navigate = useNavigate();
 
   const handleCaseStudyClick = () => {
-    navigate("/case-study");
+    navigate("/blogs/apubt");
   };
 
   return (
@@ -21,7 +21,7 @@ function CaseStudySection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="md:w-1/2"
         >
-          <img src="case-study.jpg" alt="Case Study Left" className="w-full rounded-lg shadow-md" />
+          <img src="/hero/case-study.webp" alt="Case Study Left" className="w-full rounded-lg shadow-md" />
         </motion.div>
         <div className="md:w-1/2 md:pl-8"> {/* Right Column */}
           <div className="text-center md:text-left"> {/* Text Container */}
