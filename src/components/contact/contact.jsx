@@ -4,6 +4,7 @@ import TextInput from "./components/TextInput";
 import TextAreaInput from "./components/TextAreaInput";
 import SelectInput from "./components/SelectInput";
 import ShortForm from "./shortForm";
+import bFormSubmit from "./functions/longformsubmission";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
