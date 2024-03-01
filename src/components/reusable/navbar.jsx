@@ -75,11 +75,11 @@ function NavBar() {
               </div>
               <hr className="border-blue-200 my-2" />
               <Link to="/about" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>About</Link>
-              <Link to="/blog" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>Blogs</Link>
+              <Link to="/blogs" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>Blogs</Link>
               <Link to="/faqs" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>FAQs</Link>
               <hr className="border-blue-200 my-2" />
               <Link to="/contact">
-                <button className="bg-blue-400 text-gray-800 py-2 px-4 rounded-md ">Work With Us</button>
+                <button className="bg-blue-400 text-gray-800 py-2 px-4 rounded-md "  onClick={toggleMenu}>Work With Us</button>
               </Link>
             </div>
           </div>
