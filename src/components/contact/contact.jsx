@@ -1,4 +1,3 @@
-// ContactPage.js
 import React, { useState } from "react";
 import TextInput from "./components/TextInput";
 import TextAreaInput from "./components/TextAreaInput";
@@ -15,41 +14,34 @@ function ContactPage() {
     service: "",
   });
   const [errors, setErrors] = useState({});
-  const [submissionStatus, setSubmissionStatus] = useState(null)
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setErrors({ ...errors, [name]: '' });
+    setErrors({ ...errors, [name]: "" });
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = {};
 
-    // Check if name is empty
+    // Check form validity
     if (!formData.name.trim()) {
       errors.name = "Name is required";
     }
-
-    // Check if email is empty or invalid
     if (!formData.email.trim()) {
       errors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "Email is invalid";
     }
-
-    // Check if company name is empty
     if (!formData.companyName.trim()) {
-      errors.companyName = "Please Enter your Company Name";
+      errors.companyName = "Please enter your Company Name";
     }
-
-    // Check if details is empty
     if (!formData.details.trim()) {
-      errors.details = "Please Enter your Details";
+      errors.details = "Please enter your Details";
     }
-
-    // Check if service is empty
     if (!formData.service) {
       errors.service = "Please select a service";
     }
@@ -58,45 +50,52 @@ function ContactPage() {
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
       return;
-    } else {
-      try {
-        if (bFormSubmit(formData.name,
-          formData.email,
-          formData.companyName,
-          formData.details,
-          formData.service)) {
-          setSubmissionStatus('success');
-          setTimeout(() => {
-            setSubmissionStatus(null);
-          }, 3000);
+    }
 
-        } else {
-          setSubmissionStatus('error');
-          setTimeout(() => {
-            setSubmissionStatus(null);
-          }, 3000);
+    // Start loading
+    setLoading(true);
 
-        }
-      } catch (err) {
-        setSubmissionStatus('error');
-        setTimeout(() => {
-          setSubmissionStatus(null);
-        }, 3000);
+    // Submit form data
+    try {
+      const response = await bFormSubmit(
+        formData.name,
+        formData.email,
+        formData.companyName,
+        formData.details,
+        formData.service
+      );
+      if (response) {
+        setSubmissionStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          companyName: "",
+          details: "",
+          service: "",
+        });
+      } else {
+        setSubmissionStatus("error");
       }
+    } catch (err) {
+      setSubmissionStatus("error");
+    } finally {
+      // Stop loading
+      setLoading(false);
+
+      // Clear submission status after 3 seconds
+      setTimeout(() => {
+        setSubmissionStatus(null);
+      }, 5000);
     }
   };
+
   return (
     <div className="bg-gray-400 ">
       <div className="md:min-h-screen md:flex py-32 md:px-40 md:w-fit mx-auto lg:flex justify-center items-center">
         <div className="w-full md:mr-20 " id="left-menu">
           <div className="hidden lg:block">
-            <img
-              src="/contact/contact.png"
-              className=""
-              alt=""
-            />
+            <img src="/contact/contact.png" className="" alt="" />
           </div>
-
           <ShortForm />
         </div>
 
@@ -168,25 +167,23 @@ function ContactPage() {
               type="submit"
               className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
             >
-              Submit
+              {loading ? "Submitting..." : "Submit"}
             </button>
-            {
-              submissionStatus === 'success' && (
-                <p className="text-green-900 mt-2">Form submitted successfully! Our team will reach out to you.</p>
-              )
-            }
-            {
-              submissionStatus === 'error' && (
-                <p className="text-red-500 mt-2">Something went wrong. Please try again later.</p>
-              )
-            }
+            {submissionStatus === "success" && (
+              <p className="text-green-900 mt-2">
+                Form submitted successfully! Our team will reach out to you.
+              </p>
+            )}
+            {submissionStatus === "error" && (
+              <p className="text-red-500 mt-2">
+                Something went wrong. Please try again later.
+              </p>
+            )}
           </form>
         </div>
       </div>
     </div>
   );
 }
-
-
 
 export default ContactPage;

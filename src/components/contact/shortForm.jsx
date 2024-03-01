@@ -1,29 +1,30 @@
-import CountryCodes from "./components/countryCodes";
 import React, { useState } from 'react';
+import CountryCodes from "./components/countryCodes";
 import submitForm from './functions/formSubmission';
 import './style.css'
 
 const ShortForm = () => {
-
   const [selectedOption, setSelectedOption] = useState("email");
   const [inputValue, setInputValue] = useState('');
   const [countryCode, setCountryCode] = useState('+1');
   const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const handleSubmit = async () => {
     try {
+      setLoading(true); // Start loading
+
       console.log(selectedOption)
       console.log(inputValue)
       console.log(countryCode)
+
       const success = await submitForm(selectedOption, inputValue, countryCode);
+
       if (success) {
         console.log("a success")
         setSubmissionStatus('success');
         setInputValue('');
         setCountryCode('+1');
-        setTimeout(() => {
-          setSubmissionStatus(null);
-        }, 3000);
       } else {
         setSubmissionStatus('error');
       }
@@ -32,10 +33,15 @@ const ShortForm = () => {
         setSubmissionStatus('empty');
       } else {
         setSubmissionStatus('error');
-
       }
+    } finally {
+      setLoading(false); // Stop loading
+      setTimeout(() => {
+        setSubmissionStatus(null);
+      }, 5000);
     }
   };
+
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
     setInputValue('');
@@ -48,7 +54,6 @@ const ShortForm = () => {
   const handleCountryCodeChange = (e) => {
     setCountryCode(e.target.value);
   };
-
 
   return (
     <div className="md:w-full max-w-md mx-auto">
@@ -66,7 +71,6 @@ const ShortForm = () => {
           onClick={() => handleOptionSelect('mobile')}
         >
           Mobile
-
         </button>
       </div>
       {selectedOption === 'email' && (
@@ -100,10 +104,10 @@ const ShortForm = () => {
         type="button"
         onClick={handleSubmit}
         className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md focus:outline-none focus:bg-indigo-600 transition-colors duration-300"
+        disabled={loading} // Disable button when loading
       >
-        Submit
+        {loading ? "Submitting..." : "Submit"}
       </button>
-
 
       {submissionStatus === 'success' && (
         <p className="text-green-900 mt-2">Form submitted successfully! Our team will reach out to you.</p>
