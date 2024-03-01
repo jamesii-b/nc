@@ -1,13 +1,41 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import CountryCodes from "./components/countryCodes";
 import React, { useState } from 'react';
+import submitForm from './functions/formSubmission';
+import './style.css'
 
 const ShortForm = () => {
+
   const [selectedOption, setSelectedOption] = useState("email");
   const [inputValue, setInputValue] = useState('');
-  const [countryCode, setCountryCode] = useState('+1'); // Default country code
+  const [countryCode, setCountryCode] = useState('+1');
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
+  const handleSubmit = async () => {
+    try {
+      console.log(selectedOption)
+      console.log(inputValue)
+      console.log(countryCode)
+      const success = await submitForm(selectedOption, inputValue, countryCode);
+      if (success) {
+        console.log("a success")
+        setSubmissionStatus('success');
+        setInputValue('');
+        setCountryCode('+1');
+        setTimeout(() => {
+          setSubmissionStatus(null);
+        }, 3000);
+      } else {
+        setSubmissionStatus('error');
+      }
+    } catch (err) {
+      if (err.message === 'empty') {
+        setSubmissionStatus('empty');
+      } else {
+        setSubmissionStatus('error');
+
+      }
+    }
+  };
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
     setInputValue('');
@@ -21,44 +49,39 @@ const ShortForm = () => {
     setCountryCode(e.target.value);
   };
 
+
   return (
-    <div className="md:w-full max-w-md mx-auto"> {/* Adjusted to match width */}
+    <div className="md:w-full max-w-md mx-auto">
       <p className="text-lg font-bold mb-2">Hate Forms?</p>
       <p className="text-base font-semibold mb-2">Drop your Email or Number. Our team will reach out to you.</p>
       <div className="flex mb-4">
         <button
-          className={`flex-1 border border-gray-300 rounded-l p-2 focus:outline-none ${selectedOption === 'email' ? 'bg-blue-200' : ''
-            }`}
+          className={`flex-1 border border-gray-300 rounded-l p-2 focus:outline-none ${selectedOption === 'email' ? 'bg-blue-200' : ''}`}
           onClick={() => handleOptionSelect('email')}
         >
           Email
-          {selectedOption === 'email' && (
-            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-black-500" />
-          )}
         </button>
         <button
-          className={`flex-1 border border-gray-300 rounded-r p-2 focus:outline-none ${selectedOption === 'mobile' ? 'bg-blue-200' : ''
-            }`}
+          className={`flex-1 border border-gray-300 rounded-r p-2 focus:outline-none ${selectedOption === 'mobile' ? 'bg-blue-200' : ''}`}
           onClick={() => handleOptionSelect('mobile')}
         >
           Mobile
-          {selectedOption === 'mobile' && (
-            <FontAwesomeIcon icon={faCheckCircle} className="ml-2 text-black-500" />
-          )}
+
         </button>
       </div>
       {selectedOption === 'email' && (
         <input
           type="text"
-          placeholder={`Enter your ${selectedOption === 'email' ? 'email' : 'mobile number'}`}
+          placeholder="Enter your email"
           className="w-full border border-gray-300 rounded px-4 py-2 mb-4 focus:outline-none"
           value={inputValue}
-          onChange={handleInputChange} />
+          onChange={handleInputChange}
+        />
       )}
       {selectedOption === 'mobile' && (
         <div className="flex mb-4 w-full">
           <select
-            className="border border-gray-300 rounded-l  py-2 focus:outline-none"
+            className="border border-gray-300 rounded-l py-2 focus:outline-none"
             value={countryCode}
             onChange={handleCountryCodeChange}
           >
@@ -74,11 +97,24 @@ const ShortForm = () => {
         </div>
       )}
       <button
-        type="submit"
-        className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+        type="button"
+        onClick={handleSubmit}
+        className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md focus:outline-none focus:bg-indigo-600 transition-colors duration-300"
       >
         Submit
       </button>
+
+
+      {submissionStatus === 'success' && (
+        <p className="text-green-900 mt-2">Form submitted successfully! Our team will reach out to you.</p>
+      )}
+      {submissionStatus === 'error' && (
+        <p className="text-red-500 mt-2">Something went wrong. Please try again later.</p>
+      )}
+      {submissionStatus === 'empty' && (
+        <p className="text-red-500 mt-2">Please fill out the form before submitting.</p>
+      )}
+
     </div>
   );
 };

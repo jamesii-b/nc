@@ -13,15 +13,15 @@ interface BlogPreview {
 const blogDatum: BlogPreview[] = [
     {
         title: "Navigating the Pandemic: The Resilient Journey of Amul with Technology",
-        sub_title: `
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates error blanditiis recusandae provident! Ex, repellat.`,
+        sub_title: "Explore the transformative journey of Amul, India's leading dairy cooperative, as it navigated the challenges of the pandemic through technology-driven solutions.",
         image: "/misc/amul.webp",
         url: "/blogs/amul"
     },
     {
         title: "Mastering Cost Efficiency: Strategies for Optimizing Spending in AWS Without Compromising Performance",
         sub_title:
-            ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates error blanditiis recusandae provident! Ex, repellat.`,
+            `Discover the best practices and strategies for optimizing spending in AWS without compromising performance, ensuring cost efficiency and operational excellence. 
+            `,
         image: "/misc/aws.webp",
         url: "/blogs/aws"
     },

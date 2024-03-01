@@ -13,7 +13,8 @@ import FaqPage from "./components/others/faq";
 import BlogPage from './components/others/BlogPage'
 import ScrollToTop from './ScrollTOTop'
 import AMUL from "./components/others/sub-blogs/amul";
-
+import APUBT from "./components/others/sub-blogs/apubt";
+import AWSBlog from "./components/others/sub-blogs/aws";
 import MaintenancePage from './components/reusable/maintenance'
 
 export default function App() {
@@ -35,8 +36,8 @@ export default function App() {
           <Route path="/service" element={<Navigate to="/services" />} />
           {/*  BLOGS START */}
           <Route path="/blogs/amul" element={<AMUL />} />
-          <Route path="/blogs/apubt" element={<MaintenancePage />} />
-          <Route path="/blogs/aws" element={<MaintenancePage />} />
+          <Route path="/blogs/apubt" element={<APUBT />} />
+          <Route path="/blogs/aws" element={<AWSBlog />} />
           {/* BLOGSEND*/}
 
 

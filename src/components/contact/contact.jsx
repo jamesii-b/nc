@@ -14,6 +14,7 @@ function ContactPage() {
     service: "",
   });
   const [errors, setErrors] = useState({});
+  const [submissionStatus, setSubmissionStatus] = useState(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,11 +58,32 @@ function ContactPage() {
       setErrors(errors);
       return;
     } else {
-      // If no errors, proceed with form submission logic
-      console.log(formData);
+      try {
+        if (bFormSubmit(formData.name,
+          formData.email,
+          formData.companyName,
+          formData.details,
+          formData.service)) {
+          setSubmissionStatus('success');
+          setTimeout(() => {
+            setSubmissionStatus(null);
+          }, 3000);
+
+        } else {
+          setSubmissionStatus('error');
+          setTimeout(() => {
+            setSubmissionStatus(null);
+          }, 3000);
+
+        }
+      } catch (err) {
+        setSubmissionStatus('error');
+        setTimeout(() => {
+          setSubmissionStatus(null);
+        }, 3000);
+      }
     }
   };
-
   return (
     <div className="bg-gray-400 ">
       <div className="md:min-h-screen md:flex py-32 md:px-40 md:w-fit mx-auto lg:flex justify-center items-center">
@@ -147,11 +169,23 @@ function ContactPage() {
             >
               Submit
             </button>
+            {
+              submissionStatus === 'success' && (
+                <p className="text-green-900 mt-2">Form submitted successfully! Our team will reach out to you.</p>
+              )
+            }
+            {
+              submissionStatus === 'error' && (
+                <p className="text-red-500 mt-2">Something went wrong. Please try again later.</p>
+              )
+            }
           </form>
         </div>
       </div>
     </div>
   );
 }
+
+
 
 export default ContactPage;
