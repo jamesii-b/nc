@@ -27,7 +27,7 @@ function BottomNavBar() {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/api/proposal', {
+      const response = await fetch('https://nepcodes-api.azurewebsites.net/api/proposal', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
