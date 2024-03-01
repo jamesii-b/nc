@@ -17,7 +17,7 @@ async function bFormSubmit(name,
     try {
         /* 
                 FORM URL here */
-        const response = await fetch('http://localhost:3000/api/submit-form', {
+        const response = await fetch('https://nepcodes-api.azurewebsites.net/api/submit-form', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

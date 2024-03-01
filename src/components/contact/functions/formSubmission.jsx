@@ -20,7 +20,7 @@ async function submitForm(selectedOption, inputValue, countryCode) {
     try {
         /* 
                 FORM URL here */
-        const response = await fetch('http://localhost:3000/api/shortform', {
+        const response = await fetch('https://nepcodes-api.azurewebsites.net/api/shortform', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
