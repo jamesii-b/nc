@@ -28,7 +28,7 @@ const GridItems = [
 function ImageCarousel({ openImageViewer }) {
     return (
         <div className="z-50 bg-white">
-            <div className="font-body text-2xl mx-10 font-bold mt-10">Our Projects:</div>
+            <div className="font-body text-2xl font-bold mt-10">Our Projects:</div>
             <div className="container mx-auto my-10 w-4/5 h-1/2 p-10 overflow-hidden">
                 <div className="w-full h-full grid grid-cols-4 auto-rows-[50px] gap-x-3 gap-y-4">
                     {GridItems.map((item, index) => (

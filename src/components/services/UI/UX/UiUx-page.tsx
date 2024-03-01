@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import HeroCTA from "../../../reusable/HeroCTA";
 import HeadBar from "../../../reusable/head-bar";
 import ImageCarousel from "./components/corousel";
-
-
+import MobileCorousel from "./components/responsive";
 function UiUxPage() {
   const [viewerOpen, setViewerOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -29,9 +28,14 @@ function UiUxPage() {
           </div>
         </div>
       </div>
-      <div className="hidden md:block lg:block">
+      <div className="hidden  md:block lg:block">
         <ImageCarousel openImageViewer={openImageViewer} />
         {viewerOpen && <ImageViewer imageUrl={selectedImage} onClose={closeImageViewer} />}
+      </div>
+      <div className=" md:hidden lg:hidden">
+        {/* <ImageCarousel openImageViewer={openImageViewer} />
+        {viewerOpen && <ImageViewer imageUrl={selectedImage} onClose={closeImageViewer} />} */}
+        <MobileCorousel  />
       </div>
       <HeroCTA />
     </div>
