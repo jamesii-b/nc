@@ -42,7 +42,7 @@ function HeadBar({ imageSrc, backgroundColor, title }) {
                     objectFit: 'cover',
                     opacity: imageLoaded ? 1 : 0
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover sm:min-h-30vh sm:max-h-30vh"
                 alt=""
                 onLoad={handleImageLoaded}
                 onError={handleImageLoaded} // Fallback for image loading errors

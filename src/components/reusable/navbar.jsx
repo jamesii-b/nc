@@ -30,7 +30,7 @@ function NavBar() {
     <nav className={`fixed w-full text-secondary_text z-50 text-xl h-20  top-0 ${scrolled ? "lg:bg-secondary md:bg-secondary bg-transparent" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center text-t_secondary">
         <div className="px-8 space-x-8">
-          <button className="lg:hidden md:hidden text-2xl text-blue-300 focus:outline-none" onClick={toggleMenu}>
+          <button className="lg:hidden z-50 p-5 absolute right-0 md:hidden text-2xl text-blue-300 focus:outline-none" onClick={toggleMenu}>
             {showMenu ?
               <IoCloseSharp className="text-white text-3xl" /> : <IoMdMenu className="text-white text-3xl" />
             }
@@ -59,24 +59,24 @@ function NavBar() {
       </div>
       {
         showMenu && (
-          <div className="lg:hidden sm:visible md:hidden font-medium bg-blue-100 p-7 rounded-md">
+          <div className="lg:hidden w-full absolute top-0 sm:visible md:hidden font-medium bg-blue-100 p-7 rounded-md">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="  py-1 px-4 rounded-md ">Home</Link>
+              <Link to="/" onClick={toggleMenu} className="  py-1 px-4 rounded-md ">Home</Link>
               <hr className="border-blue-200 my-2" />
               <div className="flex flex-col">
                 <div className="flex items-center">
-                  <Link to="/services" className="  py-1 px-4 rounded-md ">Services</Link>
+                  <Link to="/services" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>Services</Link>
                   <FaAngleDown className="text-2xl ml-2" />
                 </div>
                 <div className="pl-8">
-                  <Link to="/services/development" className="  block py-1 px-4 rounded-md">Development</Link>
-                  <Link to="/services/ui-ux" className="  block py-1 px-4 rounded-md ">UI/UX Design</Link>
+                  <Link to="/services/development" className="  block py-1 px-4 rounded-md" onClick={toggleMenu}>Development</Link>
+                  <Link to="/services/ui-ux" className="  block py-1 px-4 rounded-md " onClick={toggleMenu}>UI/UX Design</Link>
                 </div>
               </div>
               <hr className="border-blue-200 my-2" />
-              <Link to="/about" className="  py-1 px-4 rounded-md ">About</Link>
-              <Link to="/blog" className="  py-1 px-4 rounded-md ">Blogs</Link>
-              <Link to="/faqs" className="  py-1 px-4 rounded-md ">FAQs</Link>
+              <Link to="/about" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>About</Link>
+              <Link to="/blog" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>Blogs</Link>
+              <Link to="/faqs" className="  py-1 px-4 rounded-md " onClick={toggleMenu}>FAQs</Link>
               <hr className="border-blue-200 my-2" />
               <Link to="/contact">
                 <button className="bg-blue-400 text-gray-800 py-2 px-4 rounded-md ">Work With Us</button>

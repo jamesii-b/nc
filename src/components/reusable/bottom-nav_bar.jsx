@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function BottomNavBar() {
   return (
-    <div className="bg-sub_color min-h-max h-auto w-full z-50 bg-black text-white grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4 md:px-10 py-6 md:py-10">
+    <div className="bg-sub_color min-h-max h-auto w-full overflow-hidden z-50 bg-black text-white grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-4 md:px-10 py-6 md:py-10">
       <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
         <div className="font-bold text-xl md:text-2xl mb-2 md:mb-4">
           <Link to="/">
