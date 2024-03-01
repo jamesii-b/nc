@@ -3,26 +3,26 @@ import { FaDesktop, FaMobileAlt } from 'react-icons/fa';
 
 const data = [
     {
-        image: "/services/dev/port/p1.png",
-        mImage: "/services/dev/port/p1-m.jpg",
+        image: "/services/dev/port/p1.webp",
+        mImage: "/services/dev/port/p1-m.webp",
         video: "/video1.mp4",
         alt: "https://apubt.com",
     },
     {
-        image: "/services/dev/port/p2.png",
-        mImage: "/services/dev/port/p2-m.jpg",
+        image: "/services/dev/port/p2.webp",
+        mImage: "/services/dev/port/p2-m.webp",
         video: "/video2.mp4",
         alt: "Website/App 2",
     },
     {
-        image: "/services/dev/port/p3.png",
-        mImage: "/services/dev/port/p3-m.jpg",
+        image: "/services/dev/port/p3.webp",
+        mImage: "/services/dev/port/p3-m.webp",
         video: "/video3.mp4",
         alt: "Website/App 3",
     },
     {
-        image: "/services/dev/port/p4.png",
-        mImage: "/services/dev/port/p4-m.jpg",
+        image: "/services/dev/port/p4.webp",
+        mImage: "/services/dev/port/p4-m.webp",
         video: "/video3.mp4",
         alt: "Website/App 3",
     },

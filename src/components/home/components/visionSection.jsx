@@ -10,7 +10,7 @@ function VisualSection() {
         <p className="text-lg text-secondary_text mb-8 font-body">
           Create, Construct, and Expand Your Digital Vision
         </p>
-        <img src="/hero/service-path.png" className="w-full rounded-lg" alt="" />
+        <img src="/hero/service-path.webp" className="w-full rounded-lg" alt="" />
       </div>
     </div>
   );

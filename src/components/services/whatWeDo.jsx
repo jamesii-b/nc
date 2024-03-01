@@ -11,7 +11,7 @@ import HeroCTA from "../reusable/HeroCTA";
 const WhatWeDo = () => {
   return (
     <>
-      <HeadBar title="Services" imageSrc="/services/01.png" backgroundColor="bg-primary" />
+      <HeadBar title="Services" imageSrc="/services/01.webp" backgroundColor="bg-primary" />
       <div className="container mx-auto py-20 px-6 sm:px-24"> {/* Adjust padding for small screens */}
         <div className="flex flex-col md:flex-row items-center mb-8">
           <div className="w-full md:w-1/2 mb-4 md:mb-0 pr-4 md:pr-8"> {/* Adjust padding for small screens */}
