@@ -1,71 +1,82 @@
-import React, { useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { CSSTransition } from "react-transition-group";
-import "./whyUs.css";
+import React, { useState } from "react";
+import { Transition } from "@headlessui/react";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import { IoMdCodeWorking } from "react-icons/io";
 
-function WhyUs() {
-  const data = [
-    {
-      title: "Fast Delivery",
-      content: "We ensure top-notch quality in everything we do.",
-    },
-    {
-      title: "24/7 Customer Support",
-      content: "Our dedicated support tea is always here to assist you.",
-    },
-    {
-      title: "Affordable Pricing",
-      content: "We offer competitive pricing without compromising quality.",
-    },
-    {
-      title: "Experienced Team",
-      content: "Our team has years of experience in the IT industry.",
-    },
-    {
-      title: "Quality Assurance",
-      content: "We ensure top-notch quality in everything we do.",
-    },
-    {
-      title: "Cutting-Edge Technologies",
-      content: "We leverage the latest technologies to meet your needs.",
-    },
-  ];
-
-  const [displayIndex, setDisplayIndex] = useState(null); // Default to no item displayed
-  const listRef = useRef(null);
-
-  const toggleContent = (index) => {
-    if (displayIndex === index) {
-      setDisplayIndex(null);
-    } else {
-      setDisplayIndex(index);
-    }
-  };
+const WhyUsItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  // const hasColonSeparatedItems = answer.includes(":::::");
 
   return (
-    <div className="container mx-auto flex justify-center p-8">
-      <div className="space-y-4 ml-4 md:ml-20 md:min-h-screen/1.5 md:w-full lg:w-1/2 relative">
-        <div className="flex flex-wrap">
-          {data.map((item, index) => (
-            <div key={index} className="w-full md:w-full border-pink-300 mb-4 md:mb-0 md:mr-4">
-              <div className={`overflow-hidden ${index === displayIndex ? "min-h-28" : "min-h-12"}`}>
-                <div className="flex items-start" onClick={() => toggleContent(index)}>
-                  <h3 className={`text-lg font-semibold border-pink-300 border-b-4 flex-grow`} style={{ marginRight: '1rem', textAlign: 'left' }}>{item.title}</h3>
-                  <FontAwesomeIcon icon={faChevronDown} className={`text-gray-600 transition-transform ${index === displayIndex ? "rotate-180" : ""}`} />
-                </div>
-                <CSSTransition in={index === displayIndex} timeout={500} classNames="fade" unmountOnExit>
-                  <div ref={listRef} className={`text-base py-3 text-gray-700 ${index === displayIndex ? "" : "block"}`}>
-                    {item.content}
-                  </div>
-                </CSSTransition>
-              </div>
+    <div className="mb-10  px-10 md:max-w-4xl md:px-20 mx-auto">
+      <button
+        className="flex justify-between items-center  w-full p-1 border-b border-gray-300"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="font-semibold">{question}</span>
+        <span>{isOpen ? <FaMinus /> : <FaPlus />}</span>
+      </button>
+      <Transition
+        show={isOpen}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        {(ref) => (
+          <div ref={ref} className="p-4 text-left text-gray-800 rounded-b-md">
+            <div>
+              {answer.split('\n').map((line, index) => (
+                <p key={index} className="py-1">{line}</p>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        )}
+      </Transition>
     </div>
   );
-}
+};
+
+
+function WhyUs() {
+  return (
+
+
+    <div>
+
+      <WhyUsItem
+        question="Expertise Across Technologies"
+        answer="Our team boasts expertise across a wide array of technologies, ensuring that we can proficiently handle any project requirement, regardless of its complexity or specificity."
+      />
+
+      <WhyUsItem
+        question="Transparent Communication"
+        answer="We believe in fostering open and transparent communication with our clients throughout the entire project lifecycle. From initial discussions to regular progress updates and issue resolution, we keep our clients informed and involved every step of the way."
+      />
+
+      <WhyUsItem
+        question="Application and Data Security"
+        answer="Security is paramount in everything we do. We implement robust security measures to safeguard both applications and data, following industry best practices and protocols to ensure the confidentiality and integrity of our clients' sensitive information."
+      />
+
+      <WhyUsItem
+        question="Scalability and Support"
+        answer="Our solutions are designed with scalability in mind, allowing them to grow seamlessly alongside our clients' businesses. Moreover, we provide comprehensive support and maintenance services to ensure that our clients' systems remain operational and optimized even as their needs evolve."
+      />
+
+      <WhyUsItem
+        question="Competitive Pricing"
+        answer="We offer competitive pricing structures tailored to suit our clients' budgets and project requirements. Our transparent pricing model ensures that clients receive exceptional value for their investment without compromising on quality or service."
+      />
+
+
+
+    </div>
+
+
+  );
+};
 
 export default WhyUs;

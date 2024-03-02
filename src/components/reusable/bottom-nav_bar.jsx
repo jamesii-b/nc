@@ -68,6 +68,16 @@ function BottomNavBar() {
           <li className="mb-1 md:mb-2"><Link to="/about"> About</Link></li>
           <li className="mb-1 md:mb-2"><Link to="/services"> Services</Link></li>
           <li className="mb-1 md:mb-2"><Link to="/what-we-do"> Work</Link></li>
+          <li className="mb-1 md:mb-2">
+            <Link to="/faqs">
+              FAQ
+            </Link>
+          </li>
+          <li className="mb-1 md:mb-2">
+            <Link to='/blogs'>
+              Blogs
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="flex flex-col items-center md:items-start">
@@ -99,18 +109,21 @@ function BottomNavBar() {
         {submissionStatus === 'error' && (
           <p className="text-red-500 mt-1">Something went wrong. Please try again later.</p>
         )}
-        <ul className="list-none mt-3">
-          <li className="mb-1 md:mb-2">
-            <Link to="/faqs">
-              FAQ
-            </Link>
-          </li>
-          <li className="mb-1 md:mb-2">
-            <Link to='/blogs'>
-              Blogs
-            </Link>
-          </li>
-        </ul>
+        <div className="mt-3">
+          <p className="font-bold">Contact Us:</p>
+          <p>Email:
+            <a href="mailto:info@nepcodes.com">
+              info@nepcodes.com
+            </a>
+          </p>
+          <p>Phone:
+            <a href="tel:+9779863184471">
+              +977 9863184471
+            </a>
+          </p>
+
+        </div>
+
       </div>
     </div>
   );

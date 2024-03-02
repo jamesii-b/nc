@@ -11,7 +11,7 @@ function FeatureSection() {
       <div className="container mx-auto px-4">
         <SliderBox other="We are" highlight="Different" />
       </div>
-      <div className="flex flex-col items-center my-20">
+      <div className="flex flex-col items-center ">
 
         {sections.map((section, index) => {
           return (

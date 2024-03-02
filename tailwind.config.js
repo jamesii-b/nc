@@ -11,7 +11,8 @@ export default {
         bg_primary:"#f3f6fb",
         bg_secondary:"#ffffff",
         t_primary:"#000000",
-        t_secondary:"#ffffff"
+        t_secondary:"#ffffff",
+        contrast: '#ffb703',
       },
       fontFamily: {
         body: ["Libre Franklin", "sans-serif"],

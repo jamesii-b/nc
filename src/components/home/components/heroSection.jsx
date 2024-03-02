@@ -22,7 +22,7 @@ function HeroSection() {
         className="absolute inset-0 flex flex-col justify-center items-center text-center text-white"
       >
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-body font-bold  text-yellow-400 ">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-body font-bold  text-contrast md:mb-5 lg:mb-5 ">
           Empowering Businesses Through <br /> IT Solutions
         </h1>
 

@@ -10,8 +10,8 @@ function CaseStudySection() {
   };
 
   return (
-    <div className="container mx-auto py-16 px-4">
-      <h1 className="text-center text-3xl font-bold mb-10">
+    <div className="container mx-auto py-16 px-12">
+      <h1 className="text-center font-bold font-body  text-4xl mb-10">
         Case Study
       </h1>
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">

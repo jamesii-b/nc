@@ -15,7 +15,7 @@ const WhatWeDo = () => {
       <div className="container mx-auto py-20 px-6 sm:px-24"> {/* Adjust padding for small screens */}
         <div className="flex flex-col md:flex-row items-center mb-8">
           <div className="w-full md:w-1/2 mb-4 md:mb-0 pr-4 md:pr-8"> {/* Adjust padding for small screens */}
-            <h1 className="text-4xl font-bold mb-4 text-gray-800">
+            <h1 className="text-4xl font-body font-bold mb-4 text-gray-800">
               What We Do
             </h1>
             <p className="text-lg text-gray-700">
@@ -43,7 +43,7 @@ const WhatWeDo = () => {
       </div>
 
       <div className="container mx-auto max-w-screen-md" id="x"> {/* Remove unnecessary whitespace */}
-        <div className="grid md:grid-cols-1 gap-8 font-body ">
+        <div className="grid md:grid-cols-1 gap-8  ">
           {/* Development Box */}
           <div className="flex flex-col md:flex-row ">
             <ServiceBox
@@ -55,11 +55,14 @@ const WhatWeDo = () => {
               icon={<FaDesktop className="text-5xl text-blue-500" />}
             />
             <div className="w-0 md:w-8"></div> {/* Adjust spacing */}
-            <img src={s1} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
+            <img src={s1} className="max-h-96 mx-auto w-fit  md:h-auto md:max-h-96  md:w-auto" alt="" />
+            {/* <img src={s1} className="max-h-80 mx-auto w-fit  md:h-full" alt="" /> */}
+
           </div>
           {/* UI and UX Box */}
           <div className="flex flex-col md:flex-row ">
-            <img src={s2} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" />
+            <img src={s2} className="max-h-96 mx-auto w-fit  md:h-auto md:max-h-96  md:w-auto" alt="" />
+            {/* <img src={s2} className="h-full  md:h-auto md:max-h-96 w-full md:w-auto" alt="" /> */}
             <div className="w-0 md:w-8"></div> {/* Adjust spacing */}
             <ServiceBox
               title="UI and UX"
@@ -73,7 +76,7 @@ const WhatWeDo = () => {
         </div>
       </div >
 
-      <div className="bg-tertiary h-screen mx-auto text-center pt-20">
+      <div className="bg-tertiary mx-auto text-center pt-20">
         <div className="mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold font-body">Why Nepcodes?</h2>
         </div>

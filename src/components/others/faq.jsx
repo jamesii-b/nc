@@ -106,15 +106,6 @@ function FaqPage() {
             question="Do you provide ongoing support and maintenance after the project is completed?"
             answer="Yes, we offer ongoing support and maintenance services to ensure the smooth operation of your software. Whether it's bug fixes, updates, or enhancements, our team is here to assist you even after the project is completed."
           />
-          <FaqItem
-            question="Can you customize software according to our specific requirements?"
-            answer="Absolutely! We understand that every business is unique. Our team works closely with clients to gather requirements and tailor solutions that meet their exact needs."
-          />
-          <FaqItem
-            question="Can you customize software according to our specific requirements?"
-            answer="Absolutely! We understand that every business is unique. Our team works closely with clients to gather requirements and tailor solutions that meet their exact needs."
-          />
-
         </div>
 
       </div>

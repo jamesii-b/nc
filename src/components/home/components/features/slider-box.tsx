@@ -38,7 +38,7 @@ function SliderBox({other, highlight, }) {
     const targetRef = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
     return (
         <>
-            <h1 className="text-center mb-20 font-bold font-body text-4xl">
+            <h1 className="text-center mb-10 font-bold font-body  text-4xl">
                 {other}{' '}
                 <button ref={targetRef} id="btn1" className={`button ${isVisible ? 'visible' : ''}`}>
                     {highlight}

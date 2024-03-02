@@ -54,7 +54,7 @@ function NavBar() {
           </div>
         </div>
         <div className="hidden lg:block md:block">
-          <Link to="/contact"><button className="bg-blue-400 text-gray-800 px-4 py-2 rounded-md">Work With Us</button></Link>
+          <Link to="/contact"><button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 lg:hover:scale-110 md:hover:scale-105 text-white px-4 py-2 rounded-md">Work With Us</button></Link>
         </div>
       </div>
       {
